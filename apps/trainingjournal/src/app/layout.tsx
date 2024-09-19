@@ -1,4 +1,5 @@
 import './global.css';
+import Navbar from './components/navbar/navbar';
 
 export const metadata = {
   title: 'Welcome to trainingjournal',
@@ -12,7 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

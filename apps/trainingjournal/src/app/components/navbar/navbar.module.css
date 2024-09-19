@@ -1,0 +1,20 @@
+.navbar {
+  background-color: var(--color-primary);
+  padding: var(--space-4) 0;
+  & * {
+    color: white;
+  }
+  & a {
+    text-decoration: none;
+  }
+  & a:hover,
+  & a:focus,
+  & a:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+.brand {
+  font-size: var(--font-size-3);
+}

@@ -1,10 +1,10 @@
-import styles from './page.module.css';
+import Container from './components/container/container';
+import Typography from './components/typography/typography';
 
 export default function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
-  return <div>welcome</div>;
+  return (
+    <Container>
+      <Typography as="h1">Welcome</Typography>
+    </Container>
+  );
 }

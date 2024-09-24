@@ -1,5 +1,6 @@
 import './global.css';
 import Navbar from './components/navbar/navbar';
+import { SuperTokensProvider } from './components/supertokens-provider';
 
 export const metadata = {
   title: 'Welcome to trainingjournal',
@@ -13,10 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-      </body>
+      <SuperTokensProvider>
+        <body>
+          <Navbar />
+          {children}
+        </body>
+      </SuperTokensProvider>
     </html>
   );
 }

@@ -22,6 +22,7 @@ body {
 
 :root {
   --color-primary: #145ae6;
+  --color-border: #e2e2e2;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -49,4 +50,8 @@ body {
   --font-size-10: 3rem;
   --font-size-11: 3.25rem;
   --font-size-12: 3.5rem;
+}
+
+.layout__app-container {
+  padding: var(--space-10) 0;
 }

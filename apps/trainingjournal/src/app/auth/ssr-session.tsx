@@ -65,3 +65,11 @@ export async function getSSRSessionHelper(): Promise<{
     return { accessTokenPayload: undefined, hasToken, error: undefined };
   }
 }
+
+export const getSSRUserId = async (): Promise<string | null> => {
+  const { accessTokenPayload } = await getSSRSessionHelper();
+  if (accessTokenPayload != null && accessTokenPayload.sub != null) {
+    return accessTokenPayload.sub;
+  }
+  return null;
+};

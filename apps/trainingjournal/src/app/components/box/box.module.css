@@ -1,0 +1,44 @@
+.box {
+  &[data-display='flex'] {
+    display: flex;
+  }
+  &[data-justify-content='space-between'] {
+    justify-content: space-between;
+  }
+  &[data-gap='1'] {
+    gap: var(--space-1);
+  }
+  &[data-gap='2'] {
+    gap: var(--space-2);
+  }
+  &[data-gap='3'] {
+    gap: var(--space-3);
+  }
+  &[data-gap='4'] {
+    gap: var(--space-4);
+  }
+  &[data-gap='5'] {
+    gap: var(--space-5);
+  }
+  &[data-gap='6'] {
+    gap: var(--space-6);
+  }
+  &[data-gap='7'] {
+    gap: var(--space-7);
+  }
+  &[data-gap='8'] {
+    gap: var(--space-8);
+  }
+  &[data-gap='9'] {
+    gap: var(--space-9);
+  }
+  &[data-gap='10'] {
+    gap: var(--space-10);
+  }
+  &[data-gap='11'] {
+    gap: var(--space-11);
+  }
+  &[data-gap='12'] {
+    gap: var(--space-12);
+  }
+}

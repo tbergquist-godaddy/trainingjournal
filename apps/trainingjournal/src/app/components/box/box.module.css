@@ -5,6 +5,9 @@
   &[data-justify-content='space-between'] {
     justify-content: space-between;
   }
+  &[data-direction='column'] {
+    flex-direction: column;
+  }
   &[data-gap='1'] {
     gap: var(--space-1);
   }

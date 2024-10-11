@@ -31,4 +31,10 @@
     transform: translateY(0);
     box-shadow: none;
   }
+
+  &[aria-disabled='true'] {
+    background: var(--color-gray-600);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

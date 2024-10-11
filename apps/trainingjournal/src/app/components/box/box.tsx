@@ -8,6 +8,7 @@ type Props = {
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
   gap?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  direction?: Property.FlexDirection;
 };
 
 export default function Box({
@@ -16,6 +17,7 @@ export default function Box({
   alignItems,
   justifyContent,
   gap,
+  direction,
 }: Props) {
   return (
     <div
@@ -23,6 +25,7 @@ export default function Box({
       data-align-items={alignItems}
       data-justify-content={justifyContent}
       data-gap={gap}
+      data-direction={direction}
       className={styles.box}
     >
       {children}

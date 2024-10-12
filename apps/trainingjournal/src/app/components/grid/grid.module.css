@@ -1,16 +1,6 @@
-.box {
-  &[data-display='flex'] {
-    display: flex;
-  }
-  &[data-justify-content='space-between'] {
-    justify-content: space-between;
-  }
-  &[data-align-items='center'] {
-    align-items: center;
-  }
-  &[data-direction='column'] {
-    flex-direction: column;
-  }
+.grid {
+  display: grid;
+
   &[data-gap='1'] {
     gap: var(--space-1);
   }
@@ -47,4 +37,8 @@
   &[data-gap='12'] {
     gap: var(--space-12);
   }
+}
+
+.fluid {
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min), 1fr));
 }

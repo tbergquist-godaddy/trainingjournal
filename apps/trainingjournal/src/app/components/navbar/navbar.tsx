@@ -9,7 +9,7 @@ export default function Navbar() {
       <Container>
         <div className={styles.flex}>
           <div>
-            <Link className={styles.brand} href="/">
+            <Link className={styles.brand} href="/home">
               Trainingjournal
             </Link>
           </div>

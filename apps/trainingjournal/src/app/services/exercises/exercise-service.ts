@@ -1,10 +1,13 @@
+import { getSSRUserId } from '../../auth/ssr-session';
 import exercises from './__fixtures__/exercises';
 import { IExercise } from './types';
 import { setTimeout } from 'node:timers/promises';
 
-export const getExercises = (
-  userId: string
-): Promise<Array<IExercise> | undefined> => {
+export const getExercises = async (): Promise<Array<IExercise> | undefined> => {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    return [];
+  }
   return Promise.resolve(exercises[userId]);
 };
 

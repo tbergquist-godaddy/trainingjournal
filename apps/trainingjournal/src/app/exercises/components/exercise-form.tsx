@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation';
 
 export type Exercise = {
   name: string;
+  id?: string;
 };
 
 type Props = {
@@ -26,6 +27,7 @@ export default function ExerciseForm({
   defaultValues,
   actionText,
 }: Props) {
+  console.log({ defaultValues });
   const router = useRouter();
   const methods = useForm({
     defaultValues,
@@ -50,6 +52,9 @@ export default function ExerciseForm({
       >
         <Section>
           <TextInput label="Name" name="name" />
+          {defaultValues.id != null && (
+            <input type="hidden" name="id" value={defaultValues.id} />
+          )}
         </Section>
         <Section>
           <Box display="flex" gap={4}>

@@ -11,10 +11,25 @@ export const getExercises = async (): Promise<Array<IExercise> | undefined> => {
   return Promise.resolve(exercises[userId]);
 };
 
+export const getExercise = async (id: string): Promise<IExercise | null> => {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    return null;
+  }
+  return Promise.resolve(
+    exercises[userId].find((exercise) => exercise.id === id) || null
+  );
+};
+
 export const createExercise = async (exercise: Omit<IExercise, 'id'>) => {
   await setTimeout(3000);
   return Promise.resolve({
     name: exercise.name,
     id: `${Math.floor(Math.random() * 1000)}`,
   });
+};
+
+export const updateExercise = async (exercise: IExercise) => {
+  await setTimeout(3000);
+  return Promise.resolve(exercise);
 };

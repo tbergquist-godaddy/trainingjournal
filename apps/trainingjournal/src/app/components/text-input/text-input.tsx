@@ -9,7 +9,7 @@ type Props = HTMLProps<HTMLInputElement> & {
   name: string;
 };
 
-export default function TextInput({ label, value, name }: Props) {
+export default function TextInput({ label, name, type = 'text' }: Props) {
   const id = useId();
   const { control } = useFormContext();
 
@@ -29,8 +29,7 @@ export default function TextInput({ label, value, name }: Props) {
       <input
         {...field}
         className={styles.input}
-        type="text"
-        value={value}
+        type={type}
         name={name}
         id={id}
         aria-describedby={invalid ? `error-${id}` : undefined}

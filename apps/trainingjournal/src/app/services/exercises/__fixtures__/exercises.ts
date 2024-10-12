@@ -25,23 +25,23 @@ const userExerciseMap: Record<string, Array<IExercise>> = {
   ],
   'fbcb9d14-3360-4b1e-8d20-944f7a71e51f': [
     {
-      id: '1',
+      id: '6',
       name: 'Bench Press',
     },
     {
-      id: '2',
+      id: '7',
       name: 'Squat',
     },
     {
-      id: '3',
+      id: '8',
       name: 'Deadlift',
     },
     {
-      id: '4',
+      id: '9',
       name: 'Pull-Up',
     },
     {
-      id: '5',
+      id: '10',
       name: 'Plank',
     },
   ],

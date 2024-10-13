@@ -21,6 +21,15 @@ export const getExercise = async (id: string): Promise<IExercise | null> => {
   );
 };
 
+export const deleteExercise = async (id: string) => {
+  await setTimeout(1500);
+  const exercise = await getExercise(id);
+  if (!exercise) {
+    throw new Error('Exercise not found');
+  }
+  return exercise;
+};
+
 export const createExercise = async (exercise: Omit<IExercise, 'id'>) => {
   await setTimeout(3000);
   return Promise.resolve({

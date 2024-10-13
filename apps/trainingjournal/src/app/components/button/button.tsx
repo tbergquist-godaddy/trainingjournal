@@ -15,7 +15,7 @@ type AnchorProps = HTMLProps<HTMLAnchorElement> & {
 };
 
 type Props = (ButtonProps | AnchorProps) & {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'danger';
   loading?: boolean;
 };
 

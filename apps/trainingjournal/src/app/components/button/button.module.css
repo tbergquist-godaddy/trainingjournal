@@ -14,12 +14,17 @@
   border: 1px solid var(--color-primary-border);
   &[data-type='primary'] {
     background: var(--color-primary);
-    color: white;
+    color: #fff;
   }
   &[data-type='secondary'] {
     background: #fff;
     color: var(--color-primary);
     border-color: var(--color-border);
+  }
+  &[data-type='danger'] {
+    background: var(--color-danger);
+    color: #fff;
+    border-color: var(--color-danger-border);
   }
   &:hover,
   &:focus {

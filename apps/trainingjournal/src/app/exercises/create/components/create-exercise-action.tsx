@@ -12,6 +12,9 @@ export type State =
   | {
       status: 'error';
       error: string;
+    }
+  | {
+      status: 'pending';
     };
 export default async function createExerciseAction(
   data: FormData

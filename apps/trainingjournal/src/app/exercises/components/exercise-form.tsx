@@ -32,6 +32,7 @@ export default function ExerciseForm({
   const methods = useForm({
     defaultValues,
     resolver: zodResolver(exerciseSchema),
+    mode: 'all',
   });
   const [pending, startTransaction] = useTransition();
   return (

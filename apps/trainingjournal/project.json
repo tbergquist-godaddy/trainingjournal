@@ -5,5 +5,9 @@
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project trainingjournal --web",
-  "targets": {}
+  "targets": {
+    "generate": {
+      "command": "prisma generate --schema apps/trainingjournal/prisma/schema.prisma"
+    }
+  }
 }

@@ -29,7 +29,9 @@
     "../../apps/trainingjournal/.next/types/**/*.ts",
     "../../dist/apps/trainingjournal/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../dist/trainingjournal/.next/types/**/*.ts",
+    "../../apps/trainingjournal/.next/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

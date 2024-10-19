@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { createExercise } from '../../../services/exercises/exercise-service';
 import { Exercise } from '../../components/exercise-form';
 import { exerciseSchema } from '../../schema/exercise-schema';
@@ -24,6 +25,7 @@ export default async function createExerciseAction(
   try {
     const exercise = exerciseSchema.parse({ name });
     const createdExercise = await createExercise(exercise);
+    revalidatePath('/exercises');
     return {
       status: 'success',
       exercise: createdExercise,

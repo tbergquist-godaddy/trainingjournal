@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { updateExercise } from '../../../../services/exercises/exercise-service';
 import { Exercise } from '../../../components/exercise-form';
 import { exerciseSchema } from '../../../schema/exercise-schema';
@@ -24,6 +25,7 @@ export default async function editExerciseAction(
       .extend({ id: z.string().min(1, 'Id is required') })
       .parse({ name, id });
     const createdExercise = await updateExercise(exercise);
+    revalidatePath('/exercises');
     return {
       status: 'success',
       exercise: createdExercise,

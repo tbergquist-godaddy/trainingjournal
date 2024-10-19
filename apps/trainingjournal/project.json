@@ -8,6 +8,18 @@
   "targets": {
     "generate": {
       "command": "prisma generate --schema apps/trainingjournal/prisma/schema.prisma"
+    },
+    "migrate": {
+      "command": "prisma migrate deploy --schema apps/trainingjournal/prisma/schema.prisma"
+    },
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "apps/trainingjournal"
+      },
+      "dependsOn": ["generate", "migrate", "^build"]
     }
   }
 }

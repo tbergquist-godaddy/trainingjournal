@@ -19,7 +19,14 @@
       "options": {
         "outputPath": "apps/trainingjournal"
       },
-      "dependsOn": ["generate", "migrate", "^build"]
+      "configurations": {
+        "development": {
+          "dependsOn": ["^build"]
+        },
+        "production": {
+          "dependsOn": ["generate", "migrate", "^build"]
+        }
+      }
     }
   }
 }

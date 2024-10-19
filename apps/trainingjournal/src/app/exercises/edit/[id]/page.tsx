@@ -7,9 +7,10 @@ import Button from '../../../components/button/button';
 import deleteExercise from './actions/delete-exercise-action';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
-export default function EditExercisePage({ params: { id } }: Props) {
+export default async function EditExercisePage({ params }: Props) {
+  const { id } = await params;
   return (
     <div>
       <Box display="flex" justifyContent="space-between">

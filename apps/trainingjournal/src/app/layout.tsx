@@ -17,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <SuperTokensProvider>
         <body>
+          <title>Trainingjournal</title>
           <Navbar />
           <Container>
             <div className="layout__app-container">{children}</div>

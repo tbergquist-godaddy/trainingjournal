@@ -1,10 +1,25 @@
-import { setTimeout } from 'node:timers/promises';
+import { prisma } from '../services/prisma';
+import { getSSRUserId } from '../auth/ssr-session';
+export { type Program } from '@prisma/client';
 
-type Program = {
+type CreateProgram = {
   name: string;
 };
-export async function createProgram({ name }: Program): Promise<null> {
+
+export async function createProgram({ name }: CreateProgram) {
   console.log('Creating program', name);
-  await setTimeout(2000);
-  return null;
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    throw new Error('User not found');
+  }
+
+  return prisma.program.create({ data: { name, userId } });
+}
+
+export async function getPrograms() {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    throw new Error('User not found');
+  }
+  return prisma.program.findMany({ where: { userId } });
 }

@@ -15,18 +15,18 @@
     "build": {
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
       "options": {
         "outputPath": "apps/trainingjournal"
       },
-      "configurations": {
-        "development": {
-          "dependsOn": ["^build"]
-        },
-        "production": {
-          "dependsOn": ["generate", "migrate", "^build"]
-        }
-      }
+      "dependsOn": ["generate", "migrate", "^build"]
+    },
+    "build:dev": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "apps/trainingjournal"
+      },
+      "dependsOn": ["generate", "^build"]
     }
   }
 }

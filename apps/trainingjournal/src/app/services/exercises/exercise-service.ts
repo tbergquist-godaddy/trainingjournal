@@ -1,7 +1,6 @@
 import { getSSRUserId } from '../../auth/ssr-session';
-import { PrismaClient, Exercise } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from '../../services/prisma';
+import { type Exercise } from '@prisma/client';
 
 type IExercise = Omit<Exercise, 'userId'>;
 

@@ -8,8 +8,9 @@ const client = jwksClient({
     'https://st-dev-ac2e0940-7aa7-11ef-ab9e-9bd286159eeb.aws.supertokens.io/.well-known/jwks.json',
 });
 
-function getAccessToken(): string | undefined {
-  return cookies().get('sAccessToken')?.value;
+async function getAccessToken(): Promise<string | undefined> {
+  const c = await cookies();
+  return c.get('sAccessToken')?.value;
 }
 
 function getPublicKey(header: JwtHeader, callback: SigningKeyCallback) {
@@ -53,7 +54,7 @@ export async function getSSRSessionHelper(): Promise<{
   hasToken: boolean;
   error: Error | undefined;
 }> {
-  const accessToken = getAccessToken();
+  const accessToken = await getAccessToken();
   const hasToken = !!accessToken;
   try {
     if (accessToken) {

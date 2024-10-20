@@ -18,3 +18,9 @@ model Exercise {
   name   String
   userId String
 }
+
+model Program {
+  id     String @id @default(cuid())
+  name   String
+  userId String
+}

@@ -1,6 +1,7 @@
 import { ReactHTML, ReactNode } from 'react';
 import styles from './list.module.css';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 type Props = {
   children: ReactNode;
@@ -24,4 +25,13 @@ function ListItem({ children, className, as = 'li' }: Props) {
   );
 }
 
+type LinkProps = {
+  children: ReactNode;
+  href: string;
+};
+function ListLink({ children, href }: LinkProps) {
+  return <Link href={href}>{children}</Link>;
+}
+
 List.Item = ListItem;
+List.Link = ListLink;

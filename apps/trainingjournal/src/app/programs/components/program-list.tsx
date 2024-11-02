@@ -8,7 +8,11 @@ export default async function ProgramList() {
     <Section>
       <List>
         {programs.map((program: Program) => (
-          <List.Item key={program.id}>{program.name}</List.Item>
+          <List.Item key={program.id}>
+            <List.Link href={`/programs/edit/${program.id}`}>
+              {program.name}
+            </List.Link>
+          </List.Item>
         ))}
       </List>
     </Section>

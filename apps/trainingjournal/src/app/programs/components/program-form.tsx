@@ -14,13 +14,22 @@ const programSchema = z.object({
 });
 type Props = {
   action: (data: FormData) => Promise<unknown>;
+  program?: {
+    id: string;
+    name: string;
+  } | null;
+  actionText?: string;
 };
 
-export default function ProgramForm({ action }: Props) {
+export default function ProgramForm({
+  action,
+  program,
+  actionText = 'Create Program',
+}: Props) {
   const router = useRouter();
   const methods = useForm({
     defaultValues: {
-      name: '',
+      name: program?.name ?? '',
     },
     mode: 'all',
     resolver: zodResolver(programSchema),
@@ -43,11 +52,12 @@ export default function ProgramForm({ action }: Props) {
       >
         <Section>
           <TextInput name="name" label="Name" />
+          {program?.id && <input type="hidden" name="id" value={program.id} />}
         </Section>
         <Section>
           <Box display="flex" gap={4}>
             <Button loading={pending} type="submit">
-              Create program
+              {actionText}
             </Button>
             <Button href="/programs" variant="secondary">
               Cancel

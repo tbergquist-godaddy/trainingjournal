@@ -4,8 +4,7 @@ import JsonWebToken from 'jsonwebtoken';
 import type { JwtHeader, JwtPayload, SigningKeyCallback } from 'jsonwebtoken';
 
 const client = jwksClient({
-  jwksUri:
-    'https://st-dev-ac2e0940-7aa7-11ef-ab9e-9bd286159eeb.aws.supertokens.io/.well-known/jwks.json',
+  jwksUri: 'https://st-dev-ac2e0940-7aa7-11ef-ab9e-9bd286159eeb.aws.supertokens.io/.well-known/jwks.json',
 });
 
 async function getAccessToken(): Promise<string | undefined> {
@@ -26,18 +25,13 @@ function getPublicKey(header: JwtHeader, callback: SigningKeyCallback) {
 
 async function verifyToken(token: string): Promise<JwtPayload> {
   return new Promise((resolve, reject) => {
-    JsonWebToken.verify(
-      token,
-      getPublicKey,
-      {},
-      (err: unknown, decoded: unknown) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(decoded as JwtPayload);
-        }
+    JsonWebToken.verify(token, getPublicKey, {}, (err: unknown, decoded: unknown) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(decoded as JwtPayload);
       }
-    );
+    });
   });
 }
 

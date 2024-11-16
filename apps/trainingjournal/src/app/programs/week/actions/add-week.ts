@@ -22,10 +22,7 @@ const weekSchema = z.object({
   name: z.string().min(1, 'Name is required'),
 });
 
-export default async function addWeekAction(
-  currentState: State | null,
-  data: FormData
-) {
+export default async function addWeekAction(currentState: State | null, data: FormData) {
   try {
     const week = weekSchema.parse({
       programId: data.get('programId'),
@@ -41,10 +38,7 @@ export default async function addWeekAction(
     }
     return {
       success: false,
-      message:
-        e != null && typeof e === 'object' && 'message' in e
-          ? e.message
-          : 'An error occurred',
+      message: e != null && typeof e === 'object' && 'message' in e ? e.message : 'An error occurred',
     };
   }
 }

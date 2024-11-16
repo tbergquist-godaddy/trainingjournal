@@ -14,9 +14,7 @@ type Props = {
   [key: string]: unknown;
 };
 
-export const SuperTokensProvider: React.FC<React.PropsWithChildren<Props>> = ({
-  children,
-}) => {
+export const SuperTokensProvider: React.FC<React.PropsWithChildren<Props>> = ({ children }) => {
   setRouter(useRouter(), usePathname() || window.location.pathname);
 
   return <SuperTokensWrapper>{children}</SuperTokensWrapper>;

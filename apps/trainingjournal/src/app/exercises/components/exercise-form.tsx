@@ -22,11 +22,7 @@ type Props = {
   action: (exercise: FormData) => Promise<State>;
   actionText: string;
 };
-export default function ExerciseForm({
-  action,
-  defaultValues,
-  actionText,
-}: Props) {
+export default function ExerciseForm({ action, defaultValues, actionText }: Props) {
   console.log({ defaultValues });
   const router = useRouter();
   const methods = useForm({
@@ -38,7 +34,7 @@ export default function ExerciseForm({
   return (
     <FormProvider {...methods}>
       <form
-        action={async (values) => {
+        action={async values => {
           const valid = await methods.trigger();
           if (!valid) {
             return;
@@ -53,9 +49,7 @@ export default function ExerciseForm({
       >
         <Section>
           <TextInput label="Name" name="name" />
-          {defaultValues.id != null && (
-            <input type="hidden" name="id" value={defaultValues.id} />
-          )}
+          {defaultValues.id != null && <input type="hidden" name="id" value={defaultValues.id} />}
         </Section>
         <Section>
           <Box display="flex" gap={4}>

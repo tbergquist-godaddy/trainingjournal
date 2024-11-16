@@ -11,14 +11,7 @@ type Props = {
   direction?: Property.FlexDirection;
 };
 
-export default function Box({
-  children,
-  display,
-  alignItems,
-  justifyContent,
-  gap,
-  direction,
-}: Props) {
+export default function Box({ children, display, alignItems, justifyContent, gap, direction }: Props) {
   return (
     <div
       data-display={display}

@@ -11,18 +11,12 @@ type Props = {
 
 export default function List({ children, className, as = 'ul' }: Props) {
   const Component = as;
-  return (
-    <Component className={clsx(styles.list, className)}>{children}</Component>
-  );
+  return <Component className={clsx(styles.list, className)}>{children}</Component>;
 }
 
 function ListItem({ children, className, as = 'li' }: Props) {
   const Component = as;
-  return (
-    <Component className={clsx(styles.listItem, className)}>
-      {children}
-    </Component>
-  );
+  return <Component className={clsx(styles.listItem, className)}>{children}</Component>;
 }
 
 type LinkProps = {

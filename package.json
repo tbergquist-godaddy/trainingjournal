@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@nx/eslint": "19.7.4",
-    "@nx/eslint-plugin": "19.7.4",
+    "@nx/eslint-plugin": "20.1.2",
     "@nx/jest": "19.7.4",
     "@nx/js": "19.7.4",
     "@nx/next": "19.7.4",

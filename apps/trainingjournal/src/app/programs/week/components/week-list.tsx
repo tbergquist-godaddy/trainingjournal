@@ -15,12 +15,10 @@ export default async function WeekList({ weeks }: Props) {
         <Typography as="h2">Weeks</Typography>
 
         {resolvedWeeks.length === 0 ? (
-          <Typography>
-            Click the add weeks button above to create your first week
-          </Typography>
+          <Typography>Click the add weeks button above to create your first week</Typography>
         ) : (
           <List>
-            {resolvedWeeks.map((week) => (
+            {resolvedWeeks.map(week => (
               <List.Item key={week.id}>{week.name}</List.Item>
             ))}
           </List>

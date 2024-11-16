@@ -19,11 +19,7 @@ export default function AddWeek({ programId, weeks }: Props) {
     <>
       <form action={formAction}>
         <input name="programId" type="hidden" value={programId} />
-        <input
-          name="name"
-          type="hidden"
-          value={`Week ${resolvedWeeks.length + 1}`}
-        />
+        <input name="name" type="hidden" value={`Week ${resolvedWeeks.length + 1}`} />
         <Button variant="tertiary" type="submit">
           Add week
         </Button>

@@ -6,6 +6,7 @@ import EditProgram from './components/edit-program';
 import DeleteProgramForm from './components/delete-program-form';
 import AddWeek from './components/add-week';
 import { getWeeks } from '@/programs/week/week-service';
+import WeekList from '@/programs/week/components/week-list';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -13,18 +14,21 @@ type Props = {
 
 export default async function EditProgramsPage({ params }: Props) {
   const { id } = await params;
-  const { weeks } = (await getWeeks(id)) ?? { weeks: [] };
+  const weeks = getWeeks(id);
   return (
     <ProtectedPage>
       <Box display="flex" justifyContent="space-between">
         <Typography as="h1">Edit Program</Typography>
         <DeleteProgramForm id={id} />
       </Box>
-      <Suspense fallback={<div>Loading...</div>}>
-        <EditProgram id={id} />
+      <Suspense fallback={<div style={{ height: 220 }}>Loading...</div>}>
+        <EditProgram id={id}>
+          <AddWeek programId={id} weeks={weeks} />
+        </EditProgram>
       </Suspense>
-      <pre>{JSON.stringify(weeks, null, 2)}</pre>
-      <AddWeek programId={id} weekCount={weeks.length + 1} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <WeekList weeks={weeks} />
+      </Suspense>
     </ProtectedPage>
   );
 }

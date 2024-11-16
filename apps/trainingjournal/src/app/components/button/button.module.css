@@ -26,6 +26,11 @@
     color: #fff;
     border-color: var(--color-danger-border);
   }
+  &[data-type='tertiary'] {
+    background: var(--color-tertiary);
+    color: var(--color-tertiary-text);
+    border-color: var(--color-tertiary-border);
+  }
   &:hover,
   &:focus {
     opacity: 0.9;

@@ -39,6 +39,9 @@ a {
   --color-border: #e2e2e2;
   --color-danger: #dc4242;
   --color-danger-border: #d41c1c;
+  --color-tertiary: #f7a74f;
+  --color-tertiary-text: #4b3c2f;
+  --color-tertiary-border: #e28f3d;
 
   --color-gray-100: #f7fafc;
   --color-gray-200: #edf2f7;

@@ -6,7 +6,7 @@ import * as z from 'zod';
 import Section from '../../components/layout/section';
 import Button from '../../components/button/button';
 import Box from '../../components/box/box';
-import { useTransition } from 'react';
+import { ReactNode, useId, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 const programSchema = z.object({
@@ -19,9 +19,16 @@ type Props = {
     name: string;
   } | null;
   actionText?: string;
+  actions?: ReactNode;
 };
 
-export default function ProgramForm({ action, program, actionText = 'Create Program' }: Props) {
+export default function ProgramForm({
+  action,
+  program,
+  actionText = 'Create Program',
+  actions,
+}: Props) {
+  const formId = useId();
   const router = useRouter();
   const methods = useForm({
     defaultValues: {
@@ -34,6 +41,7 @@ export default function ProgramForm({ action, program, actionText = 'Create Prog
   return (
     <FormProvider {...methods}>
       <form
+        id={formId}
         action={async (formData: FormData) => {
           const isValid = await methods.trigger();
           if (!isValid) {
@@ -50,17 +58,18 @@ export default function ProgramForm({ action, program, actionText = 'Create Prog
           <TextInput name="name" label="Name" />
           {program?.id && <input type="hidden" name="id" value={program.id} />}
         </Section>
-        <Section>
-          <Box display="flex" gap={4}>
-            <Button loading={pending} type="submit">
-              {actionText}
-            </Button>
-            <Button href="/programs" variant="secondary">
-              Cancel
-            </Button>
-          </Box>
-        </Section>
       </form>
+      <Section>
+        <Box display="flex" gap={4}>
+          <Button form={formId} loading={pending} type="submit">
+            {actionText}
+          </Button>
+          <Button href="/programs" variant="secondary">
+            Cancel
+          </Button>
+          {actions}
+        </Box>
+      </Section>
     </FormProvider>
   );
 }

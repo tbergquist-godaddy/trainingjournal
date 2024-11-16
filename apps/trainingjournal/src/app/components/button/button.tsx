@@ -15,12 +15,21 @@ type AnchorProps = HTMLProps<HTMLAnchorElement> & {
 };
 
 type Props = (ButtonProps | AnchorProps) & {
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: 'primary' | 'secondary' | 'danger' | 'tertiary';
   loading?: boolean;
 };
 
 export default forwardRef(function Button(
-  { children, variant = 'primary', type = 'button', href, form, loading = false, onClick, disabled }: Props,
+  {
+    children,
+    variant = 'primary',
+    type = 'button',
+    href,
+    form,
+    loading = false,
+    onClick,
+    disabled,
+  }: Props,
   ref,
 ) {
   const Component = href != null ? 'a' : 'button';

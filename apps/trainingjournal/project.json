@@ -12,6 +12,10 @@
     "migrate": {
       "command": "prisma migrate deploy --schema apps/trainingjournal/prisma/schema.prisma"
     },
+    "migrate:dev": {
+      "command": "prisma migrate dev --schema apps/trainingjournal/prisma/schema.prisma"
+    },
+
     "build": {
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],

@@ -30,7 +30,7 @@ export default async function addWeekAction(currentState: State | null, data: Fo
     });
 
     const newWeek = await createWeek(week);
-    revalidatePath('/programs/edit/[id]');
+    revalidatePath('/programs/edit/[id]', 'page');
     return { week: newWeek, success: true };
   } catch (e) {
     if (e instanceof z.ZodError) {
@@ -38,7 +38,8 @@ export default async function addWeekAction(currentState: State | null, data: Fo
     }
     return {
       success: false,
-      message: e != null && typeof e === 'object' && 'message' in e ? e.message : 'An error occurred',
+      message:
+        e != null && typeof e === 'object' && 'message' in e ? e.message : 'An error occurred',
     };
   }
 }

@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: ^3.9.0
-        version: 3.9.0(react-hook-form@7.53.0(react@19.0.0-rc-b8ae38f8-20241018))
+        version: 3.9.0(react-hook-form@7.53.0(react@19.0.0-rc.1))
       '@prisma/client':
         specifier: 5.21.1
         version: 5.21.1(prisma@5.21.1)
@@ -28,25 +28,25 @@ importers:
         version: 3.1.0
       next:
         specifier: 15.0.1
-        version: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3)
+        version: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3)
       nextjs-cors:
         specifier: ^2.2.0
-        version: 2.2.0(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))
+        version: 2.2.0(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))
       react:
-        specifier: 19.0.0-rc-b8ae38f8-20241018
-        version: 19.0.0-rc-b8ae38f8-20241018
+        specifier: 19.0.0-rc.1
+        version: 19.0.0-rc.1
       react-dom:
-        specifier: 19.0.0-rc-b8ae38f8-20241018
-        version: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
+        specifier: 19.0.0-rc.1
+        version: 19.0.0-rc.1(react@19.0.0-rc.1)
       react-hook-form:
         specifier: ^7.53.0
-        version: 7.53.0(react@19.0.0-rc-b8ae38f8-20241018)
+        version: 7.53.0(react@19.0.0-rc.1)
       react-icons:
         specifier: ^5.3.0
-        version: 5.3.0(react@19.0.0-rc-b8ae38f8-20241018)
+        version: 5.3.0(react@19.0.0-rc.1)
       supertokens-auth-react:
         specifier: ^0.47.1
-        version: 0.47.1(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(supertokens-web-js@0.13.0)
+        version: 0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.0)
       supertokens-node:
         specifier: ^20.1.2
         version: 20.1.2
@@ -74,7 +74,7 @@ importers:
         version: 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(typescript@5.5.4)
       '@nx/next':
         specifier: 19.7.4
-        version: 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+        version: 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/workspace':
         specifier: 19.7.4
         version: 19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))
@@ -4930,10 +4930,10 @@ packages:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
 
-  react-dom@19.0.0-rc-b8ae38f8-20241018:
-    resolution: {integrity: sha512-tpE0uxYzUugFdDk8ztzHFvIfRwdxMV6+zCnwmxv8Z3yQMNIdyulzkLYG3Sm76TwjHqA5BD51wEWvsOGlF7ggoQ==}
+  react-dom@19.0.0-rc.1:
+    resolution: {integrity: sha512-k8MfDX+4G+eaa1cXXI9QF4d+pQtYol3nx8vauqRWUEOPqC7NQn2qmEqUsLoSd28rrZUL+R3T2VC+kZ2Hyx1geQ==}
     peerDependencies:
-      react: 19.0.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
 
   react-hook-form@7.53.0:
     resolution: {integrity: sha512-M1n3HhqCww6S2hxLxciEXy2oISPnAzxY7gvwVPrtlczTM/1dDadXgUxDpHMrMTblDOcm/AXtXxHwZ3jpg1mqKQ==}
@@ -4957,8 +4957,8 @@ packages:
     peerDependencies:
       react: '*'
 
-  react@19.0.0-rc-b8ae38f8-20241018:
-    resolution: {integrity: sha512-biHm+Fh5xA/N8fp/34mDxk3zHrRQ1pFUYIe+jmVDsyg58OtHnYkmX7mxA63dtOhL5vwnXagUTWM3iktM585Iug==}
+  react@19.0.0-rc.1:
+    resolution: {integrity: sha512-NZKln+uyPuyHchzP07I6GGYFxdAoaKhehgpCa3ltJGzwE31OYumLeshGaitA1R/fS5d9D2qpZVwTFAr6zCLM9w==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -5135,8 +5135,8 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
-  scheduler@0.25.0-rc-b8ae38f8-20241018:
-    resolution: {integrity: sha512-mIDFzXIHvZiHazgIaPRIWOEsgvohqW9vUzoXDkK7Y+I1xG9khkBPsdKkkORnAM1r/vmd2eeUOo123I48F1b7oQ==}
+  scheduler@0.25.0-rc.1:
+    resolution: {integrity: sha512-fVinv2lXqYpKConAMdergOl5owd0rY1O4P/QTe0aWKCqGtu7VsCt1iqQFxSJtqK4Lci/upVSBpGwVC7eWcuS9Q==}
 
   schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}
@@ -6893,9 +6893,9 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@hookform/resolvers@3.9.0(react-hook-form@7.53.0(react@19.0.0-rc-b8ae38f8-20241018))':
+  '@hookform/resolvers@3.9.0(react-hook-form@7.53.0(react@19.0.0-rc.1))':
     dependencies:
-      react-hook-form: 7.53.0(react@19.0.0-rc-b8ae38f8-20241018)
+      react-hook-form: 7.53.0(react@19.0.0-rc.1)
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -7216,13 +7216,13 @@ snapshots:
       '@types/semver': 7.5.8
       semver: 7.6.3
 
-  '@module-federation/data-prefetch@0.6.6(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)':
+  '@module-federation/data-prefetch@0.6.6(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)':
     dependencies:
       '@module-federation/runtime': 0.6.6
       '@module-federation/sdk': 0.6.6
       fs-extra: 9.1.0
-      react: 19.0.0-rc-b8ae38f8-20241018
-      react-dom: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
+      react: 19.0.0-rc.1
+      react-dom: 19.0.0-rc.1(react@19.0.0-rc.1)
 
   '@module-federation/dts-plugin@0.6.6(typescript@5.5.4)':
     dependencies:
@@ -7248,10 +7248,10 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@module-federation/enhanced@0.6.6(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
+  '@module-federation/enhanced@0.6.6(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
     dependencies:
       '@module-federation/bridge-react-webpack-plugin': 0.6.6
-      '@module-federation/data-prefetch': 0.6.6(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)
+      '@module-federation/data-prefetch': 0.6.6(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)
       '@module-federation/dts-plugin': 0.6.6(typescript@5.5.4)
       '@module-federation/managers': 0.6.6
       '@module-federation/manifest': 0.6.6(typescript@5.5.4)
@@ -7452,9 +7452,9 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nrwl/next@19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
+  '@nrwl/next@19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
     dependencies:
-      '@nx/next': 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@nx/next': 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/traverse'
@@ -7491,9 +7491,9 @@ snapshots:
       - webpack
       - webpack-cli
 
-  '@nrwl/react@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
+  '@nrwl/react@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
     dependencies:
-      '@nx/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@nx/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -7538,9 +7538,9 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nrwl/webpack@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)':
+  '@nrwl/webpack@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)':
     dependencies:
-      '@nx/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)
+      '@nx/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@parcel/css'
@@ -7776,16 +7776,16 @@ snapshots:
       - supports-color
       - verdaccio
 
-  '@nx/next@19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
+  '@nx/next@19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
     dependencies:
       '@babel/plugin-proposal-decorators': 7.24.7(@babel/core@7.25.2)
-      '@nrwl/next': 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@nrwl/next': 19.7.4(@babel/core@7.25.2)(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3))(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/devkit': 19.7.4(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/eslint': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/js': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(typescript@5.5.4)
-      '@nx/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@nx/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/web': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(typescript@5.5.4)
-      '@nx/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)
+      '@nx/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)
       '@nx/workspace': 19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.5.4)
       '@svgr/webpack': 8.1.0(typescript@5.5.4)
@@ -7794,7 +7794,7 @@ snapshots:
       file-loader: 6.2.0(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       fs-extra: 11.2.0
       ignore: 5.3.2
-      next: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3)
+      next: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3)
       semver: 7.6.3
       tslib: 2.7.0
       webpack-merge: 5.10.0
@@ -7863,10 +7863,10 @@ snapshots:
   '@nx/nx-win32-x64-msvc@19.7.4':
     optional: true
 
-  '@nx/react@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
+  '@nx/react@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))':
     dependencies:
-      '@module-federation/enhanced': 0.6.6(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
-      '@nrwl/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@module-federation/enhanced': 0.6.6(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@nrwl/react': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/devkit': 19.7.4(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/eslint': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(@zkochan/js-yaml@0.0.7)(eslint@8.57.1)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/js': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(typescript@5.5.4)
@@ -7920,12 +7920,12 @@ snapshots:
       - typescript
       - verdaccio
 
-  '@nx/webpack@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)':
+  '@nx/webpack@19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)':
     dependencies:
       '@babel/core': 7.25.2
-      '@module-federation/enhanced': 0.6.6(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
+      '@module-federation/enhanced': 0.6.6(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)(webpack@5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@module-federation/sdk': 0.6.6
-      '@nrwl/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(typescript@5.5.4)
+      '@nrwl/webpack': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(typescript@5.5.4)
       '@nx/devkit': 19.7.4(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))
       '@nx/js': 19.7.4(@babel/traverse@7.25.6)(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@18.16.9)(nx@19.7.4(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.13))(@swc/types@0.1.12)(typescript@5.5.4))(@swc/core@1.5.29(@swc/helpers@0.5.13)))(typescript@5.5.4)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.5.4)
@@ -11567,7 +11567,7 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3):
+  next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3):
     dependencies:
       '@next/env': 15.0.1
       '@swc/counter': 0.1.3
@@ -11575,9 +11575,9 @@ snapshots:
       busboy: 1.6.0
       caniuse-lite: 1.0.30001663
       postcss: 8.4.31
-      react: 19.0.0-rc-b8ae38f8-20241018
-      react-dom: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
-      styled-jsx: 5.1.6(@babel/core@7.25.2)(react@19.0.0-rc-b8ae38f8-20241018)
+      react: 19.0.0-rc.1
+      react-dom: 19.0.0-rc.1(react@19.0.0-rc.1)
+      styled-jsx: 5.1.6(@babel/core@7.25.2)(react@19.0.0-rc.1)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.0.1
       '@next/swc-darwin-x64': 15.0.1
@@ -11593,10 +11593,10 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextjs-cors@2.2.0(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3)):
+  nextjs-cors@2.2.0(next@15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3)):
     dependencies:
       cors: 2.8.5
-      next: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(sass@1.79.3)
+      next: 15.0.1(@babel/core@7.25.2)(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(sass@1.79.3)
 
   no-case@3.0.4:
     dependencies:
@@ -12183,30 +12183,30 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
-  react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018):
+  react-dom@19.0.0-rc.1(react@19.0.0-rc.1):
     dependencies:
-      react: 19.0.0-rc-b8ae38f8-20241018
-      scheduler: 0.25.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
+      scheduler: 0.25.0-rc.1
 
-  react-hook-form@7.53.0(react@19.0.0-rc-b8ae38f8-20241018):
+  react-hook-form@7.53.0(react@19.0.0-rc.1):
     dependencies:
-      react: 19.0.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
 
-  react-icons@5.3.0(react@19.0.0-rc-b8ae38f8-20241018):
+  react-icons@5.3.0(react@19.0.0-rc.1):
     dependencies:
-      react: 19.0.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
 
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
 
-  react-qr-code@2.0.15(react@19.0.0-rc-b8ae38f8-20241018):
+  react-qr-code@2.0.15(react@19.0.0-rc.1):
     dependencies:
       prop-types: 15.8.1
       qr.js: 0.0.0
-      react: 19.0.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
 
-  react@19.0.0-rc-b8ae38f8-20241018: {}
+  react@19.0.0-rc.1: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -12380,7 +12380,7 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scheduler@0.25.0-rc-b8ae38f8-20241018: {}
+  scheduler@0.25.0-rc.1: {}
 
   schema-utils@3.3.0:
     dependencies:
@@ -12708,10 +12708,10 @@ snapshots:
     dependencies:
       webpack: 5.94.0(@swc/core@1.5.29(@swc/helpers@0.5.13))
 
-  styled-jsx@5.1.6(@babel/core@7.25.2)(react@19.0.0-rc-b8ae38f8-20241018):
+  styled-jsx@5.1.6(@babel/core@7.25.2)(react@19.0.0-rc.1):
     dependencies:
       client-only: 0.0.1
-      react: 19.0.0-rc-b8ae38f8-20241018
+      react: 19.0.0-rc.1
     optionalDependencies:
       '@babel/core': 7.25.2
 
@@ -12738,13 +12738,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  supertokens-auth-react@0.47.1(react-dom@19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018))(react@19.0.0-rc-b8ae38f8-20241018)(supertokens-web-js@0.13.0):
+  supertokens-auth-react@0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.0):
     dependencies:
       intl-tel-input: 17.0.21
       prop-types: 15.8.1
-      react: 19.0.0-rc-b8ae38f8-20241018
-      react-dom: 19.0.0-rc-b8ae38f8-20241018(react@19.0.0-rc-b8ae38f8-20241018)
-      react-qr-code: 2.0.15(react@19.0.0-rc-b8ae38f8-20241018)
+      react: 19.0.0-rc.1
+      react-dom: 19.0.0-rc.1(react@19.0.0-rc.1)
+      react-qr-code: 2.0.15(react@19.0.0-rc.1)
       supertokens-js-override: 0.0.4
       supertokens-web-js: 0.13.0
 

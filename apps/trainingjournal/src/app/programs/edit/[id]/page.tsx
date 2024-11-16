@@ -13,7 +13,7 @@ type Props = {
 
 export default async function EditProgramsPage({ params }: Props) {
   const { id } = await params;
-  const weeks = await getWeeks(id);
+  const { weeks } = (await getWeeks(id)) ?? { weeks: [] };
   return (
     <ProtectedPage>
       <Box display="flex" justifyContent="space-between">
@@ -24,7 +24,7 @@ export default async function EditProgramsPage({ params }: Props) {
         <EditProgram id={id} />
       </Suspense>
       <pre>{JSON.stringify(weeks, null, 2)}</pre>
-      <AddWeek programId={id} weekCount={1} />
+      <AddWeek programId={id} weekCount={weeks.length + 1} />
     </ProtectedPage>
   );
 }

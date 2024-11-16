@@ -27,8 +27,8 @@ model Program {
 }
 
 model Week {
-  id        String   @id @default(cuid())
+  id        String  @id @default(cuid())
   name      String
-  Program   Program? @relation(fields: [programId], references: [id])
-  programId String?
+  Program   Program @relation(fields: [programId], references: [id], onDelete: Cascade)
+  programId String
 }

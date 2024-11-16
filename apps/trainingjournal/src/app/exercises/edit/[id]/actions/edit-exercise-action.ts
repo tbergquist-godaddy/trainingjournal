@@ -15,15 +15,11 @@ export type State =
       status: 'error';
       error: string;
     };
-export default async function editExerciseAction(
-  data: FormData
-): Promise<State> {
+export default async function editExerciseAction(data: FormData): Promise<State> {
   const name = data.get('name');
   const id = data.get('id');
   try {
-    const exercise = exerciseSchema
-      .extend({ id: z.string().min(1, 'Id is required') })
-      .parse({ name, id });
+    const exercise = exerciseSchema.extend({ id: z.string().min(1, 'Id is required') }).parse({ name, id });
     const createdExercise = await updateExercise(exercise);
     revalidatePath('/exercises');
     return {

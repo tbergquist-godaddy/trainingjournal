@@ -8,7 +8,7 @@ export default async function ExerciseList() {
   return (
     <Section>
       <List>
-        {exercises?.map((exercise) => (
+        {exercises?.map(exercise => (
           <List.Item key={exercise.id}>
             <List.Link href={`/exercises/edit/${exercise.id}`}>
               <Typography as="span" key={exercise.id}>

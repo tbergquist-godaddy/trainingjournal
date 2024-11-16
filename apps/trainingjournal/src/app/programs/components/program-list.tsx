@@ -9,9 +9,7 @@ export default async function ProgramList() {
       <List>
         {programs.map((program: Program) => (
           <List.Item key={program.id}>
-            <List.Link href={`/programs/edit/${program.id}`}>
-              {program.name}
-            </List.Link>
+            <List.Link href={`/programs/edit/${program.id}`}>{program.name}</List.Link>
           </List.Item>
         ))}
       </List>

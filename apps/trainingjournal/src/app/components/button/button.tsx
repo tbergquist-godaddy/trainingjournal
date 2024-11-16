@@ -20,17 +20,8 @@ type Props = (ButtonProps | AnchorProps) & {
 };
 
 export default forwardRef(function Button(
-  {
-    children,
-    variant = 'primary',
-    type = 'button',
-    href,
-    form,
-    loading = false,
-    onClick,
-    disabled,
-  }: Props,
-  ref
+  { children, variant = 'primary', type = 'button', href, form, loading = false, onClick, disabled }: Props,
+  ref,
 ) {
   const Component = href != null ? 'a' : 'button';
   const isDisabled = loading || disabled;
@@ -46,7 +37,7 @@ export default forwardRef(function Button(
       aria-disabled={isDisabled}
       aria-label={isDisabled ? 'Loading' : undefined}
       aria-busy={isDisabled}
-      onClick={(e) => {
+      onClick={e => {
         if (isDisabled) {
           e.preventDefault();
           return;

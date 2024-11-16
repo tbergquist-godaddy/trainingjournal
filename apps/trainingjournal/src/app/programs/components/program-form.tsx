@@ -21,11 +21,7 @@ type Props = {
   actionText?: string;
 };
 
-export default function ProgramForm({
-  action,
-  program,
-  actionText = 'Create Program',
-}: Props) {
+export default function ProgramForm({ action, program, actionText = 'Create Program' }: Props) {
   const router = useRouter();
   const methods = useForm({
     defaultValues: {

@@ -6,13 +6,8 @@ import { TypeInput } from 'supertokens-node/types';
 
 const { SUPERTOKENS_CONNECTION_URL, SUPERTOKENS_API_KEY } = process.env;
 
-if (
-  SUPERTOKENS_CONNECTION_URL === undefined ||
-  SUPERTOKENS_API_KEY === undefined
-) {
-  throw new Error(
-    'SUPERTOKENS_CONNECTION_URL and SUPERTOKENS_API_KEY must be defined'
-  );
+if (SUPERTOKENS_CONNECTION_URL === undefined || SUPERTOKENS_API_KEY === undefined) {
+  throw new Error('SUPERTOKENS_CONNECTION_URL and SUPERTOKENS_API_KEY must be defined');
 }
 
 export const backendConfig = (): TypeInput => {

@@ -12,11 +12,5 @@ export default async function EditExercise({ id }: Props) {
     return <div>No exercise with id: {id} found</div>;
   }
   console.log({ exercise });
-  return (
-    <ExerciseForm
-      defaultValues={exercise}
-      action={editExercise}
-      actionText="Edit exercise"
-    />
-  );
+  return <ExerciseForm defaultValues={exercise} action={editExercise} actionText="Edit exercise" />;
 }

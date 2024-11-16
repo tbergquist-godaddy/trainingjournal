@@ -7,9 +7,7 @@ import { revalidatePath } from 'next/cache';
 const deleteExerciseSchema = z.object({
   id: z.string().min(1, 'Id is required'),
 });
-export default async function deleteProgramAction(
-  formData: FormData
-): Promise<void> {
+export default async function deleteProgramAction(formData: FormData): Promise<void> {
   try {
     const { id: parsedId } = deleteExerciseSchema.parse({
       id: formData.get('id'),

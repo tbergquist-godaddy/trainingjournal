@@ -19,9 +19,7 @@ export type State =
       status: 'pending';
     };
 
-export default async function createProgramAction(
-  data: FormData
-): Promise<State> {
+export default async function createProgramAction(data: FormData): Promise<State> {
   const name = data.get('name');
 
   try {

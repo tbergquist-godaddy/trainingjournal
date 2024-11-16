@@ -10,37 +10,45 @@ type CreateProgram = {
 
 type EditProgram = Omit<Program, 'userId'>;
 
-export async function createProgram({ name }: CreateProgram) {
-  console.log('Creating program', name);
+async function getUserId() {
   const userId = await getSSRUserId();
   if (userId == null) {
     throw new Error('User not found');
   }
+  return userId;
+}
+
+export async function createProgram({ name }: CreateProgram) {
+  const userId = await getUserId();
 
   return prisma.program.create({ data: { name, userId } });
 }
 
 export async function getPrograms() {
-  const userId = await getSSRUserId();
-  if (userId == null) {
-    throw new Error('User not found');
-  }
+  const userId = await getUserId();
   return prisma.program.findMany({ where: { userId } });
 }
 
-export async function getProgram(id: string) {
-  const userId = await getSSRUserId();
-  if (userId == null) {
-    throw new Error('User not found');
+export async function hasAccessToProgram(programId: string) {
+  try {
+    const userId = await getUserId();
+    const program = await prisma.program.findUnique({
+      where: { id: programId, userId },
+      select: { id: true },
+    });
+    return program != null;
+  } catch {
+    return false;
   }
+}
+
+export async function getProgram(id: string) {
+  const userId = await getUserId();
   return prisma.program.findUnique({ where: { userId, id } });
 }
 
 export async function editProgram(program: EditProgram) {
-  const userId = await getSSRUserId();
-  if (userId == null) {
-    throw new Error('User not found');
-  }
+  const userId = await getUserId();
   return prisma.program.update({
     where: {
       userId,
@@ -51,9 +59,6 @@ export async function editProgram(program: EditProgram) {
 }
 
 export async function deleteProgram(id: string) {
-  const userId = await getSSRUserId();
-  if (userId == null) {
-    throw new Error('User not found');
-  }
+  const userId = await getUserId();
   return prisma.program.delete({ where: { id, userId } });
 }

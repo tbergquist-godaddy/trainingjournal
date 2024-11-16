@@ -23,4 +23,12 @@ model Program {
   id     String @id @default(cuid())
   name   String
   userId String
+  weeks  Week[]
+}
+
+model Week {
+  id        String   @id @default(cuid())
+  name      String
+  Program   Program? @relation(fields: [programId], references: [id])
+  programId String?
 }

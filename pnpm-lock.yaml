@@ -46,13 +46,13 @@ importers:
         version: 5.3.0(react@19.0.0-rc.1)
       supertokens-auth-react:
         specifier: ^0.47.1
-        version: 0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.0)
+        version: 0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.1)
       supertokens-node:
         specifier: ^20.1.2
         version: 20.1.2
       supertokens-web-js:
-        specifier: ^0.13.0
-        version: 0.13.0
+        specifier: ^0.13.1
+        version: 0.13.1
       tslib:
         specifier: ^2.3.0
         version: 2.7.0
@@ -5562,8 +5562,8 @@ packages:
   supertokens-node@20.1.2:
     resolution: {integrity: sha512-Ypbm5h537VykYFGbVBtnDr0cea0VWhFszrN05tMZKKvc7h40lVV+uwF+1wh03RWuAFsIdb81DcoFV1cwgmz4sg==}
 
-  supertokens-web-js@0.13.0:
-    resolution: {integrity: sha512-I0o8Pblu4G1Bopm6c0YI2bZQ/22k5qrjdPFV7etNJ+ydOmNoQPBCo1iY9QbmLANcokyLOaWS5k8jEuwoVh/FYQ==}
+  supertokens-web-js@0.13.1:
+    resolution: {integrity: sha512-8ZWlC+01SuyrEerF/Wjkwlikw9SiLPdDIY3CrtVtri6zoJ2enziyg5dbkFrWbxgOagziyl2yjnD0/EEmXxl5tw==}
 
   supertokens-website@20.1.4:
     resolution: {integrity: sha512-2hbB/MWJew4W8bq5q0M75tjUnniahLzXVOnu+535j3HB4wworwMJ1ZGfg25OL9q1fm4g+ITNKVjJeJgJqEDlmA==}
@@ -12879,7 +12879,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  supertokens-auth-react@0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.0):
+  supertokens-auth-react@0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.1):
     dependencies:
       intl-tel-input: 17.0.21
       prop-types: 15.8.1
@@ -12887,7 +12887,7 @@ snapshots:
       react-dom: 19.0.0-rc.1(react@19.0.0-rc.1)
       react-qr-code: 2.0.15(react@19.0.0-rc.1)
       supertokens-js-override: 0.0.4
-      supertokens-web-js: 0.13.0
+      supertokens-web-js: 0.13.1
 
   supertokens-js-override@0.0.4: {}
 
@@ -12911,7 +12911,7 @@ snapshots:
       - encoding
       - supports-color
 
-  supertokens-web-js@0.13.0:
+  supertokens-web-js@0.13.1:
     dependencies:
       supertokens-js-override: 0.0.4
       supertokens-website: 20.1.4

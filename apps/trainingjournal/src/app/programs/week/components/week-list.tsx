@@ -1,3 +1,4 @@
+import Accordion, { AccordionItem } from '@/components/accordion/accordion';
 import Box from '@/components/box/box';
 import Section from '@/components/layout/section';
 import List from '@/components/list/list';
@@ -17,11 +18,13 @@ export default async function WeekList({ weeks }: Props) {
         {resolvedWeeks.length === 0 ? (
           <Typography>Click the add weeks button above to create your first week</Typography>
         ) : (
-          <List>
+          <Accordion>
             {resolvedWeeks.map(week => (
-              <List.Item key={week.id}>{week.name}</List.Item>
+              <AccordionItem title={week.name} key={week.id}>
+                TODO
+              </AccordionItem>
             ))}
-          </List>
+          </Accordion>
         )}
       </Box>
     </Section>

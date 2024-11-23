@@ -25,7 +25,7 @@ export default async function WeekList({ weeks }: Props) {
               return (
                 <AccordionItem title={week.name} key={week.id}>
                   <>
-                    <AddDay count={1} weekId={week.id} />
+                    <AddDay count={week.days.length} weekId={week.id} />
                     <pre>{JSON.stringify(week.days, null, 2)}</pre>
                   </>
                 </AccordionItem>

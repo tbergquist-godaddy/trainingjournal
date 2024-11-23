@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styles from './accordion.module.css';
+import Chevron from '../icons/chevron/chevron';
 
 type Props = {
   children: ReactNode;
@@ -18,7 +19,9 @@ export function AccordionItem({ title, children }: ItemProps) {
     <details className={styles.accordionItem}>
       <summary>
         <span>{title}</span>
-        <span className={styles.accordionItem_Expand}>&times;</span>
+        <span className={styles.accordionItem_Expand}>
+          <Chevron direction="down" />
+        </span>
       </summary>
       <div className={styles.accordionItem_HiddenContent}>{children}</div>
     </details>

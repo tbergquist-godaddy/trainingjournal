@@ -1,0 +1,14 @@
+.chevron {
+  &[data-direction='left'] img {
+    transform: rotate(0deg);
+  }
+  &[data-direction='right'] img {
+    transform: rotate(180deg);
+  }
+  &[data-direction='down'] img {
+    transform: rotate(-90deg);
+  }
+  &[data-direction='up'] img {
+    transform: rotate(90deg);
+  }
+}

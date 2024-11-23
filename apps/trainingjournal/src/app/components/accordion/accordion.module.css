@@ -28,6 +28,7 @@
   }
 
   &[open] .accordionItem_HiddenContent {
+    height: auto;
     height: calc-size(auto, size);
   }
 

@@ -1,15 +1,17 @@
 import Accordion, { AccordionItem } from '@/components/accordion/accordion';
 import Box from '@/components/box/box';
 import Section from '@/components/layout/section';
-import List from '@/components/list/list';
 import Typography from '@/components/typography/typography';
-import type { Week } from '@prisma/client';
+import AddDay from '../days/add-day';
+import type { GetWeeksType } from '../week-service';
 
 type Props = {
-  weeks: Promise<{ weeks: Array<Week> } | null>;
+  weeks: GetWeeksType;
 };
+
 export default async function WeekList({ weeks }: Props) {
-  const { weeks: resolvedWeeks } = (await weeks) ?? { weeks: [] };
+  const resolvedWeeks = (await weeks) ?? [];
+
   return (
     <Section>
       <Box display="flex" direction="column" gap={4}>
@@ -19,11 +21,16 @@ export default async function WeekList({ weeks }: Props) {
           <Typography>Click the add weeks button above to create your first week</Typography>
         ) : (
           <Accordion>
-            {resolvedWeeks.map(week => (
-              <AccordionItem title={week.name} key={week.id}>
-                TODO
-              </AccordionItem>
-            ))}
+            {resolvedWeeks.map(week => {
+              return (
+                <AccordionItem title={week.name} key={week.id}>
+                  <>
+                    <AddDay count={1} weekId={week.id} />
+                    <pre>{JSON.stringify(week.days, null, 2)}</pre>
+                  </>
+                </AccordionItem>
+              );
+            })}
           </Accordion>
         )}
       </Box>

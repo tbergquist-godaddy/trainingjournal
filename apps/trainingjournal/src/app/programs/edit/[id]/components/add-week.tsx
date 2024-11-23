@@ -7,13 +7,13 @@ import { useActionState, use } from 'react';
 
 type Props = {
   programId: string;
-  weeks: Promise<{ weeks: Array<Week> } | null>;
+  weeks: Promise<Array<Week> | null>;
 };
 
 export default function AddWeek({ programId, weeks }: Props) {
   // @ts-expect-error: lets fix later
   const [, formAction] = useActionState(addWeekAction, null);
-  const { weeks: resolvedWeeks } = use(weeks) ?? { weeks: [] };
+  const resolvedWeeks = use(weeks) ?? [];
 
   return (
     <>

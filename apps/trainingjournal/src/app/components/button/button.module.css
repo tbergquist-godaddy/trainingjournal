@@ -31,6 +31,10 @@
     color: var(--color-tertiary-text);
     border-color: var(--color-tertiary-border);
   }
+  &[data-size='small'] {
+    height: var(--space-8);
+    padding: 0 var(--space-3);
+  }
   &:hover,
   &:focus {
     opacity: 0.9;

@@ -18,13 +18,17 @@ export async function createWeek(input: CreateWeekInput) {
 
 export async function getWeeks(programId: string) {
   const userId = (await getSSRUserId()) ?? '';
-  return prisma.program.findUnique({
+  return prisma.week.findMany({
     where: {
-      id: programId,
-      userId,
+      Program: {
+        userId,
+        id: programId,
+      },
     },
-    select: {
-      weeks: true,
+    include: {
+      days: true,
     },
   });
 }
+
+export type GetWeeksType = ReturnType<typeof getWeeks>;

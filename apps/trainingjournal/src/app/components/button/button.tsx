@@ -17,12 +17,14 @@ type AnchorProps = HTMLProps<HTMLAnchorElement> & {
 type Props = (ButtonProps | AnchorProps) & {
   variant?: 'primary' | 'secondary' | 'danger' | 'tertiary';
   loading?: boolean;
+  buttonSize?: 'small' | 'medium';
 };
 
 export default forwardRef(function Button(
   {
     children,
     variant = 'primary',
+    buttonSize = 'medium',
     type = 'button',
     href,
     form,
@@ -37,6 +39,7 @@ export default forwardRef(function Button(
   return (
     <Component
       type={href != null ? undefined : type}
+      data-size={buttonSize}
       data-type={variant}
       className={buttonStyles.button}
       href={href}

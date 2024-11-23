@@ -31,4 +31,12 @@ model Week {
   name      String
   Program   Program @relation(fields: [programId], references: [id], onDelete: Cascade)
   programId String
+  days      Day[]
+}
+
+model Day {
+  id     String @id @default(cuid())
+  name   String
+  weekId String
+  Week   Week   @relation(fields: [weekId], references: [id], onDelete: Cascade)
 }

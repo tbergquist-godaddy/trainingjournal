@@ -4,6 +4,7 @@ import Section from '@/components/layout/section';
 import Typography from '@/components/typography/typography';
 import AddDay from '../days/add-day';
 import type { GetWeeksType } from '../week-service';
+import DayList from '../days/actions/components/day-list';
 
 type Props = {
   weeks: GetWeeksType;
@@ -26,7 +27,9 @@ export default async function WeekList({ weeks }: Props) {
                 <AccordionItem title={week.name} key={week.id}>
                   <>
                     <AddDay count={week.days.length} weekId={week.id} />
-                    <pre>{JSON.stringify(week.days, null, 2)}</pre>
+                    <Section>
+                      <DayList days={week.days} />
+                    </Section>
                   </>
                 </AccordionItem>
               );

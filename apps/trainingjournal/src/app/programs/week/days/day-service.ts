@@ -42,3 +42,17 @@ export async function getDays(weekId: string) {
     },
   });
 }
+
+export async function getDayById(dayId: string) {
+  const userId = (await getSSRUserId()) ?? '';
+  return prisma.day.findFirst({
+    where: {
+      id: dayId,
+      Week: {
+        Program: {
+          userId,
+        },
+      },
+    },
+  });
+}

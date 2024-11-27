@@ -14,9 +14,10 @@ datasource db {
 }
 
 model Exercise {
-  id     String @id @default(cuid())
-  name   String
-  userId String
+  id              String            @id @default(cuid())
+  name            String
+  userId          String
+  PlannedExercise PlannedExercise[]
 }
 
 model Program {
@@ -35,8 +36,23 @@ model Week {
 }
 
 model Day {
-  id     String @id @default(cuid())
-  name   String
-  weekId String
-  Week   Week   @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  id              String            @id @default(cuid())
+  name            String
+  weekId          String
+  Week            Week              @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  PlannedExercise PlannedExercise[]
 }
+
+model PlannedExercise {
+  id          String   @id @default(cuid())
+  exercise    Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  exerciseId  String
+  sets        String
+  reps        String
+  description String?
+  dayId       String
+  Day         Day      @relation(fields: [dayId], references: [id], onDelete: Cascade)
+}
+
+// model Workout
+// model JournalEntry

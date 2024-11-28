@@ -16,6 +16,8 @@ export const getExercises = async () => {
   });
 };
 
+export type Exercises = ReturnType<typeof getExercises>;
+
 export const getExercise = async (id: string) => {
   const userId = await getSSRUserId();
   if (userId == null) {

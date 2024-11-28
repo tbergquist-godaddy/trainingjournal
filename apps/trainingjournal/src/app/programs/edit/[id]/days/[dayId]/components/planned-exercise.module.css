@@ -1,0 +1,15 @@
+.loader {
+  height: 340px;
+}
+
+@media (min-width: 531px) {
+  .loader {
+    height: 256px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .loader {
+    height: 172px;
+  }
+}

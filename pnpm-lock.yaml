@@ -48,8 +48,8 @@ importers:
         specifier: ^0.47.1
         version: 0.47.1(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(supertokens-web-js@0.13.1)
       supertokens-node:
-        specifier: ^21.1.0
-        version: 21.1.0
+        specifier: ^20.1.2
+        version: 20.1.2
       supertokens-web-js:
         specifier: ^0.13.1
         version: 0.13.1
@@ -2465,12 +2465,12 @@ packages:
   cookie-signature@1.0.6:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
 
-  cookie@0.6.0:
-    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+  cookie@0.4.0:
+    resolution: {integrity: sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==}
     engines: {node: '>= 0.6'}
 
-  cookie@0.7.2:
-    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
+  cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
   cookies@0.9.1:
@@ -4950,6 +4950,9 @@ packages:
   prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
 
+  psl@1.8.0:
+    resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
+
   psl@1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
 
@@ -5241,9 +5244,6 @@ packages:
     resolution: {integrity: sha512-VqpjJZKadQB/PEbEwvFdO43Ax5dFBZ2UECszz8bQ7pi7wt//PWe1P6MN7eCnjsatYtBT6EuiClbjSWP2WrIoTw==}
     engines: {node: '>= 0.8.0'}
 
-  set-cookie-parser@2.7.1:
-    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
-
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -5480,8 +5480,8 @@ packages:
   supertokens-js-override@0.0.4:
     resolution: {integrity: sha512-r0JFBjkMIdep3Lbk3JA+MpnpuOtw4RSyrlRAbrzMcxwiYco3GFWl/daimQZ5b1forOiUODpOlXbSOljP/oyurg==}
 
-  supertokens-node@21.1.0:
-    resolution: {integrity: sha512-QcIeNg1OcXK5k7x0dqIwq6kL2kiNQeV1OT242aOvjOJR5nsP4H5XiCt7Fk3ZHl6gy6x62EPQVIo6RGUY0T0ldg==}
+  supertokens-node@20.1.2:
+    resolution: {integrity: sha512-Ypbm5h537VykYFGbVBtnDr0cea0VWhFszrN05tMZKKvc7h40lVV+uwF+1wh03RWuAFsIdb81DcoFV1cwgmz4sg==}
 
   supertokens-web-js@0.13.1:
     resolution: {integrity: sha512-8ZWlC+01SuyrEerF/Wjkwlikw9SiLPdDIY3CrtVtri6zoJ2enziyg5dbkFrWbxgOagziyl2yjnD0/EEmXxl5tw==}
@@ -5560,13 +5560,6 @@ packages:
 
   thunky@1.1.0:
     resolution: {integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==}
-
-  tldts-core@6.1.64:
-    resolution: {integrity: sha512-uqnl8vGV16KsyflHOzqrYjjArjfXaU6rMPXYy2/ZWoRKCkXtghgB4VwTDXUG+t0OTGeSewNAG31/x1gCTfLt+Q==}
-
-  tldts@6.1.64:
-    resolution: {integrity: sha512-ph4AE5BXWIOsSy9stpoeo7bYe/Cy7VfpciIH4RhVZUPItCJmhqWCN0EVzxd8BOHiyNb42vuJc6NWTjJkg91Tuw==}
-    hasBin: true
 
   tmp@0.2.3:
     resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
@@ -9101,9 +9094,9 @@ snapshots:
 
   cookie-signature@1.0.6: {}
 
-  cookie@0.6.0: {}
+  cookie@0.4.0: {}
 
-  cookie@0.7.2: {}
+  cookie@0.6.0: {}
 
   cookies@0.9.1:
     dependencies:
@@ -12059,6 +12052,8 @@ snapshots:
   prr@1.0.1:
     optional: true
 
+  psl@1.8.0: {}
+
   psl@1.9.0: {}
 
   punycode@2.3.1: {}
@@ -12360,8 +12355,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  set-cookie-parser@2.7.1: {}
-
   set-function-length@1.2.2:
     dependencies:
       define-data-property: 1.1.4
@@ -12656,11 +12649,11 @@ snapshots:
 
   supertokens-js-override@0.0.4: {}
 
-  supertokens-node@21.1.0:
+  supertokens-node@20.1.2:
     dependencies:
       buffer: 6.0.3
       content-type: 1.0.5
-      cookie: 0.7.2
+      cookie: 0.4.0
       cross-fetch: 3.1.8
       debug: 4.3.7
       jose: 4.15.9
@@ -12669,9 +12662,8 @@ snapshots:
       pako: 2.1.0
       pkce-challenge: 3.1.0
       process: 0.11.10
-      set-cookie-parser: 2.7.1
+      psl: 1.8.0
       supertokens-js-override: 0.0.4
-      tldts: 6.1.64
       twilio: 4.23.0(debug@4.3.7)
     transitivePeerDependencies:
       - encoding
@@ -12756,12 +12748,6 @@ snapshots:
       tslib: 2.8.1
 
   thunky@1.1.0: {}
-
-  tldts-core@6.1.64: {}
-
-  tldts@6.1.64:
-    dependencies:
-      tldts-core: 6.1.64
 
   tmp@0.2.3: {}
 

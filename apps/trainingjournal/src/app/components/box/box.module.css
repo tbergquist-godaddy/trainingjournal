@@ -8,9 +8,18 @@
   &[data-align-items='center'] {
     align-items: center;
   }
+  &[data-align-items='end'] {
+    align-items: end;
+  }
   &[data-direction='column'] {
     flex-direction: column;
   }
+  &[data-flex-wrap='wrap'] {
+    flex-wrap: wrap;
+  }
+  flex-basis: var(--box-flex-basis);
+  flex-grow: var(--box-flex-grow);
+  flex-shrink: var(--box-flex-shrink);
   &[data-gap='1'] {
     gap: var(--space-1);
   }

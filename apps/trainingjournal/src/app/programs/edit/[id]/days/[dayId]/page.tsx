@@ -7,6 +7,8 @@ import { getDayById } from '@/programs/week/days/day-service';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import PlannedExerciseList from './components/planned-exercise-list';
+import PlannedExerciseForm, { PlannedExerciseLoader } from './components/planned-exercise-form';
+import { getExercises } from '@/services/exercises/exercise-service';
 
 type Props = {
   params: Promise<{ id: string; dayId: string }>;
@@ -14,15 +16,16 @@ type Props = {
 export default async function EditDay({ params }: Props) {
   const { dayId, id } = await params;
   const day = await getDayById(dayId);
+  const exercisesPromise = getExercises();
   return (
     <ProtectedPage>
-      <Typography as="h1">Edit Day</Typography>
+      <Typography as="h1">Edit {day?.name}</Typography>
       <Section>
         <Box display="flex" direction="column" gap={4}>
-          <label>
-            <div>Name (TODO: Add form)</div>
-            <input readOnly={true} name="name" defaultValue={day?.name ?? ''} />
-          </label>
+          <Typography as="h2">Add exercise</Typography>
+          <Suspense fallback={<PlannedExerciseLoader />}>
+            <PlannedExerciseForm dayId={dayId} exercisesPromise={exercisesPromise} />
+          </Suspense>
           <Typography as="h2">Exercises</Typography>
           <Suspense fallback={'Loading...'}>
             <PlannedExerciseList dayId={dayId} />

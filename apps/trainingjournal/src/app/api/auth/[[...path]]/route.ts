@@ -1,10 +1,10 @@
 import { getAppDirRequestHandler } from 'supertokens-node/nextjs';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { ensureSuperTokensInit } from '../../../config/backend';
 
 ensureSuperTokensInit();
 
-const handleCall = getAppDirRequestHandler();
+const handleCall = getAppDirRequestHandler(NextResponse);
 
 export async function GET(request: NextRequest) {
   const res = await handleCall(request);

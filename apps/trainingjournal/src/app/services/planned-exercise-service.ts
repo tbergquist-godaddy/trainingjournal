@@ -20,6 +20,8 @@ export const getPlannedExercises = async (dayId: string) => {
   });
 };
 
+export type PlannedExercise = ReturnType<typeof getPlannedExercises>;
+
 type CreatePlannedExerciseInput = {
   dayId: string;
   exerciseId: string;
@@ -47,6 +49,23 @@ export const createPlannedExercise = async (input: CreatePlannedExerciseInput) =
       sets,
       reps,
       description,
+    },
+  });
+};
+
+export const deletePlannedExercise = async (plannedExerciseId: string) => {
+  const userId = (await getSSRUserId()) ?? '';
+
+  return prisma.plannedExercise.delete({
+    where: {
+      id: plannedExerciseId,
+      Day: {
+        Week: {
+          Program: {
+            userId,
+          },
+        },
+      },
     },
   });
 };

@@ -1,7 +1,10 @@
 'use server';
 
 import * as z from 'zod';
-import { createPlannedExercise as create } from '@/services/planned-exercise-service';
+import {
+  createPlannedExercise as create,
+  deletePlannedExercise as deletePE,
+} from '@/services/planned-exercise-service';
 import { revalidatePath } from 'next/cache';
 
 const createPlannedExerciseSchema = z.object({
@@ -35,4 +38,16 @@ export async function createPlannedExercise(_: unknown, formData: FormData) {
       error: 'TODO',
     };
   }
+}
+
+const deletePlannedExerciseSchema = z.object({
+  plannedExerciseId: z.string().min(1, 'Planned exercise is required'),
+});
+
+export async function deletePlannedExercise(formData: FormData) {
+  const { plannedExerciseId } = await deletePlannedExerciseSchema.parseAsync({
+    plannedExerciseId: formData.get('plannedExerciseId'),
+  });
+  await deletePE(plannedExerciseId);
+  revalidatePath(`/programs/edit/[id]/days/[dayId]`, 'page');
 }

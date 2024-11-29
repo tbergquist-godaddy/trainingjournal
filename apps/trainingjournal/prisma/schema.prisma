@@ -52,6 +52,7 @@ model PlannedExercise {
   description String?
   dayId       String
   Day         Day      @relation(fields: [dayId], references: [id], onDelete: Cascade)
+  order       Int
 }
 
 // model Workout

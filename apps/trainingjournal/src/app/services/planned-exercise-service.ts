@@ -17,6 +17,9 @@ export const getPlannedExercises = async (dayId: string) => {
     include: {
       exercise: true,
     },
+    orderBy: {
+      order: 'asc',
+    },
   });
 };
 
@@ -32,7 +35,7 @@ type CreatePlannedExerciseInput = {
 export const createPlannedExercise = async (input: CreatePlannedExerciseInput) => {
   const userId = (await getSSRUserId()) ?? '';
   const { dayId, exerciseId, sets, reps, description } = input;
-  prisma.day.findFirstOrThrow({
+  const day = await prisma.day.findFirstOrThrow({
     where: {
       id: dayId,
       Week: {
@@ -40,6 +43,9 @@ export const createPlannedExercise = async (input: CreatePlannedExerciseInput) =
           userId,
         },
       },
+    },
+    select: {
+      PlannedExercise: true,
     },
   });
   return prisma.plannedExercise.create({
@@ -49,23 +55,69 @@ export const createPlannedExercise = async (input: CreatePlannedExerciseInput) =
       sets,
       reps,
       description,
+      order: day?.PlannedExercise.length + 1,
     },
   });
 };
 
 export const deletePlannedExercise = async (plannedExerciseId: string) => {
   const userId = (await getSSRUserId()) ?? '';
-
-  return prisma.plannedExercise.delete({
+  const day = await prisma.day.findFirst({
     where: {
-      id: plannedExerciseId,
-      Day: {
-        Week: {
-          Program: {
-            userId,
+      PlannedExercise: {
+        some: {
+          id: plannedExerciseId,
+          Day: {
+            Week: {
+              Program: {
+                userId,
+              },
+            },
           },
         },
       },
     },
+    select: {
+      id: true,
+      PlannedExercise: {
+        orderBy: {
+          order: 'asc',
+        },
+      },
+    },
   });
+  let count = 1;
+  const plannedExercises = (day?.PlannedExercise ?? [])
+    .map(item => {
+      if (item.id === plannedExerciseId) {
+        return null;
+      }
+      return {
+        ...item,
+        order: count++,
+      };
+    })
+    .filter(Boolean);
+  await prisma.$transaction([
+    prisma.plannedExercise.delete({
+      where: {
+        id: plannedExerciseId,
+        Day: {
+          Week: {
+            Program: {
+              userId,
+            },
+          },
+        },
+      },
+    }),
+    ...plannedExercises.map(item =>
+      prisma.plannedExercise.update({
+        where: {
+          id: item?.id,
+        },
+        data: item ?? {},
+      }),
+    ),
+  ]);
 };

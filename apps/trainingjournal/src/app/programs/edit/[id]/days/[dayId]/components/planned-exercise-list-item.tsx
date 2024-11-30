@@ -1,43 +1,25 @@
-'use client';
-
 import Box from '@/components/box/box';
-import Button from '@/components/button/button';
 import List from '@/components/list/list';
-import { FaTrash } from 'react-icons/fa';
-import { deletePlannedExercise } from '../actions/planned-exercise-actions';
 import type { PlannedExercise } from '@/services/planned-exercise-service';
-import { useTransition } from 'react';
+import DeletePlannedExerciseItem from './delete-planned-exericse';
+import ReorderExercise from './reorder-exercise';
 
-export default function PlannedExerciseItem({
-  plannedExercise,
-}: {
+type Props = {
   plannedExercise: Awaited<PlannedExercise>[0];
-}) {
-  const [isPending, startTransition] = useTransition();
+  isFirst: boolean;
+  isLast: boolean;
+};
+export default function PlannedExerciseItem({ plannedExercise, ...rest }: Props) {
   return (
     <List.Item key={plannedExercise.id}>
-      <Box display="flex" direction="row" justifyContent="space-between">
+      <Box display="flex" direction="row" justifyContent="space-between" flexWrap="wrap">
         <span>
           {plannedExercise.exercise.name} - {plannedExercise.sets} x {plannedExercise.reps}
         </span>
-        <form
-          action={(formData: FormData) => {
-            startTransition(async () => {
-              await deletePlannedExercise(formData);
-            });
-          }}
-        >
-          <input type="hidden" name="plannedExerciseId" value={plannedExercise.id} />
-          <Button
-            buttonSize="small"
-            variant="danger"
-            aria-label={`Delete ${plannedExercise.exercise.name}`}
-            type="submit"
-            loading={isPending}
-          >
-            <FaTrash size={12} />
-          </Button>
-        </form>
+        <Box display="flex" gap={2}>
+          <ReorderExercise {...rest} id={plannedExercise.id} />
+          <DeletePlannedExerciseItem name={plannedExercise.exercise.name} id={plannedExercise.id} />
+        </Box>
       </Box>
     </List.Item>
   );

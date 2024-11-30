@@ -15,8 +15,13 @@ export default async function PlannedExerciseList({ dayId }: Props) {
   }
   return (
     <List>
-      {plannedExercises.map(plannedExercise => (
-        <PlannedExerciseItem key={plannedExercise.id} plannedExercise={plannedExercise} />
+      {plannedExercises.map((plannedExercise, i) => (
+        <PlannedExerciseItem
+          isFirst={i === 0}
+          isLast={i === plannedExercises.length - 1}
+          key={plannedExercise.id}
+          plannedExercise={plannedExercise}
+        />
       ))}
     </List>
   );

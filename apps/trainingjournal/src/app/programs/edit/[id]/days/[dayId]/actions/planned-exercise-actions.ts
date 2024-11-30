@@ -4,6 +4,7 @@ import * as z from 'zod';
 import {
   createPlannedExercise as create,
   deletePlannedExercise as deletePE,
+  reorderPlannedExercise as reOrder,
 } from '@/services/planned-exercise-service';
 import { revalidatePath } from 'next/cache';
 
@@ -49,5 +50,19 @@ export async function deletePlannedExercise(formData: FormData) {
     plannedExerciseId: formData.get('plannedExerciseId'),
   });
   await deletePE(plannedExerciseId);
+  revalidatePath(`/programs/edit/[id]/days/[dayId]`, 'page');
+}
+
+const reorderPlannedExerciseSchema = z.object({
+  plannedExerciseId: z.string().min(1, 'Planned exercise is required'),
+  direction: z.enum(['UP', 'DOWN']),
+});
+
+export async function reorderPlannedExercise(formData: FormData) {
+  const { plannedExerciseId, direction } = await reorderPlannedExerciseSchema.parseAsync({
+    plannedExerciseId: formData.get('plannedExerciseId'),
+    direction: formData.get('direction'),
+  });
+  await reOrder(plannedExerciseId, direction);
   revalidatePath(`/programs/edit/[id]/days/[dayId]`, 'page');
 }

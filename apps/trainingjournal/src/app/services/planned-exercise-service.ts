@@ -121,3 +121,57 @@ export const deletePlannedExercise = async (plannedExerciseId: string) => {
     ),
   ]);
 };
+
+export const reorderPlannedExercise = async (
+  plannedExerciseId: string,
+  direction: 'UP' | 'DOWN',
+) => {
+  const userId = (await getSSRUserId()) ?? '';
+  const day = await prisma.day.findFirstOrThrow({
+    where: {
+      PlannedExercise: {
+        some: {
+          id: plannedExerciseId,
+          Day: {
+            Week: {
+              Program: {
+                userId,
+              },
+            },
+          },
+        },
+      },
+    },
+    select: {
+      PlannedExercise: {
+        orderBy: {
+          order: 'asc',
+        },
+      },
+    },
+  });
+  const plannedExercises = day?.PlannedExercise ?? [];
+  const index = plannedExercises.findIndex(item => item.id === plannedExerciseId);
+  if (index === -1) {
+    return;
+  }
+  const newIndex = direction === 'UP' ? index - 1 : index + 1;
+  if (newIndex < 0 || newIndex >= plannedExercises.length) {
+    return;
+  }
+  const temp = plannedExercises[index].order;
+  plannedExercises[index].order = plannedExercises[newIndex].order;
+  plannedExercises[newIndex].order = temp;
+  await prisma.$transaction(
+    plannedExercises.map(item =>
+      prisma.plannedExercise.update({
+        where: {
+          id: item.id,
+        },
+        data: {
+          order: item.order,
+        },
+      }),
+    ),
+  );
+};

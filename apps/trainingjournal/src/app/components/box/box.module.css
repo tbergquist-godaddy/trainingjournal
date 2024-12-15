@@ -56,4 +56,40 @@
   &[data-gap='12'] {
     gap: var(--space-12);
   }
+  &[data-mb='1'] {
+    margin-bottom: var(--space-1);
+  }
+  &[data-mb='2'] {
+    margin-bottom: var(--space-2);
+  }
+  &[data-mb='3'] {
+    margin-bottom: var(--space-3);
+  }
+  &[data-mb='4'] {
+    margin-bottom: var(--space-4);
+  }
+  &[data-mb='5'] {
+    margin-bottom: var(--space-5);
+  }
+  &[data-mb='6'] {
+    margin-bottom: var(--space-6);
+  }
+  &[data-mb='7'] {
+    margin-bottom: var(--space-7);
+  }
+  &[data-mb='8'] {
+    margin-bottom: var(--space-8);
+  }
+  &[data-mb='9'] {
+    margin-bottom: var(--space-9);
+  }
+  &[data-mb='10'] {
+    margin-bottom: var(--space-10);
+  }
+  &[data-mb='11'] {
+    margin-bottom: var(--space-11);
+  }
+  &[data-mb='12'] {
+    margin-bottom: var(--space-12);
+  }
 }

@@ -36,10 +36,8 @@ const AccordionProvider = ({ children }: Props) => {
   const closeOthers = useCallback(
     (index: number) => {
       refMap.forEach((ref, i) => {
-        if (i !== index) {
+        if (i !== index && ref.hasAttribute('open')) {
           ref.removeAttribute('open');
-        } else {
-          ref.setAttribute('open', '');
         }
       });
     },

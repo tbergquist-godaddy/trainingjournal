@@ -2,17 +2,19 @@ import { ReactNode } from 'react';
 import styles from './box.module.css';
 import type { Property } from 'csstype';
 
+type Space = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 type Props = {
   children: ReactNode;
   display?: Property.Display;
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
-  gap?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  gap?: Space;
   direction?: Property.FlexDirection;
   flexBasis?: Property.FlexBasis;
   flexWrap?: Property.FlexWrap;
   flexGrow?: Property.FlexGrow;
   flexShrink?: Property.FlexShrink;
+  mb?: Space;
 };
 
 export default function Box({
@@ -26,6 +28,7 @@ export default function Box({
   flexWrap,
   flexGrow,
   flexShrink,
+  mb,
 }: Props) {
   return (
     <div
@@ -35,6 +38,7 @@ export default function Box({
       data-gap={gap}
       data-direction={direction}
       data-flex-wrap={flexWrap}
+      data-mb={mb}
       className={styles.box}
       style={{
         // @ts-expect-error: custom property

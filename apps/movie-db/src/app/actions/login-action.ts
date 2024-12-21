@@ -18,6 +18,7 @@ export async function loginAction() {
     try {
       const response = await fetch('/3/authentication/token/new');
       const data = await response.json();
+      console.dir(data, { depth: null });
       const { token } = tokenSchema.parse(data);
       return token;
     } catch (error) {

@@ -1,6 +1,9 @@
 const { NEXT_PUBLIC_TMDB_API_KEY } = process.env;
 
 export default function tmdbFetcher(url: string, options: RequestInit = {}) {
+  if (!NEXT_PUBLIC_TMDB_API_KEY == null) {
+    throw new Error('Missing TMDB API key');
+  }
   const { method, headers, ...rest } = options;
 
   const fetchOptions = {

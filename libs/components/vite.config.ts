@@ -42,4 +42,9 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
   },
+  test: {
+    setupFiles: ['test/setup-test.ts'],
+    environment: 'jsdom',
+    watch: false,
+  },
 });

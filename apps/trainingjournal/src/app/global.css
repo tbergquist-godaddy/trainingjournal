@@ -20,6 +20,10 @@ body {
   line-height: inherit;
 }
 
+.Navbar__brand {
+  font-size: var(--font-size-3);
+}
+
 *,
 ::before,
 ::after {

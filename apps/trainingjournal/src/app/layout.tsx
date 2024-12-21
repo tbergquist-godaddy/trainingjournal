@@ -1,7 +1,8 @@
 import './global.css';
-import Navbar from './components/navbar/navbar';
 import { SuperTokensProvider } from './components/supertokens-provider';
-import { Container } from '@tbergq/components';
+import { Container, Navbar } from '@tbergq/components';
+import Link from 'next/link';
+import Logout from './components/logout';
 
 export const metadata = {
   title: 'Welcome to trainingjournal',
@@ -14,7 +15,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <SuperTokensProvider>
         <body>
           <title>Trainingjournal</title>
-          <Navbar />
+          <Navbar
+            left={
+              <Link className="Navbar__brand" href="/home">
+                Trainingjournal
+              </Link>
+            }
+            right={<Logout />}
+          />
           <Container>
             <div className="layout__app-container">{children}</div>
           </Container>

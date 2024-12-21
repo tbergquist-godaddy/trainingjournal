@@ -1,7 +1,7 @@
 import './global.css';
 import Navbar from './components/navbar/navbar';
 import { SuperTokensProvider } from './components/supertokens-provider';
-import Container from './components/container/container';
+import { Container } from '@tbergq/components';
 
 export const metadata = {
   title: 'Welcome to trainingjournal',

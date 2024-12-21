@@ -1,8 +1,10 @@
+import Login from './components/login';
+
 export default function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.css file.
-   */
-  return <div>todo</div>;
+  return (
+    <section>
+      <h1>Login</h1>
+      <Login />
+    </section>
+  );
 }

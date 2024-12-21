@@ -1,4 +1,4 @@
-export default {
+const config = {
   displayName: 'movie-db',
   preset: '../../jest.preset.js',
   transform: {
@@ -7,4 +7,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/movie-db',
+  setupFilesAfterEnv: ['<rootDir>/test/test-setup.ts'],
 };
+
+export default config;

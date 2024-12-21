@@ -1,0 +1,9 @@
+{
+  "name": "movie-db",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/movie-db",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project movie-db --web",
+  "targets": {}
+}

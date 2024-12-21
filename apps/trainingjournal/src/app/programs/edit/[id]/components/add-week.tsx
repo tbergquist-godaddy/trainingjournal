@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/button/button';
+import { Button } from '@tbergq/components';
 import addWeekAction from '@/programs/week/actions/add-week';
 import { Week } from '@prisma/client';
 import { useActionState, use } from 'react';

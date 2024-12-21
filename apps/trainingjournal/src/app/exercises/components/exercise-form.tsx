@@ -7,7 +7,7 @@ import type { State } from '../create/components/create-exercise-action';
 import { exerciseSchema } from '../schema/exercise-schema';
 import Section from '../../components/layout/section';
 import Box from '../../components/box/box';
-import Button from '../../components/button/button';
+import { Button } from '@tbergq/components';
 import Link from 'next/link';
 import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';

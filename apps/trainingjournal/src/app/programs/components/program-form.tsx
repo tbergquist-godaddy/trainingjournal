@@ -4,7 +4,7 @@ import TextInput from '../../components/text-input/text-input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Section from '../../components/layout/section';
-import Button from '../../components/button/button';
+import { Button } from '@tbergq/components';
 import Box from '../../components/box/box';
 import { ReactNode, useId, useTransition } from 'react';
 import { useRouter } from 'next/navigation';

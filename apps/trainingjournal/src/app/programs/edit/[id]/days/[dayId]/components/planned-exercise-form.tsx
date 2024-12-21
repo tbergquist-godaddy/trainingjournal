@@ -3,7 +3,7 @@
 import { use, useActionState, useTransition } from 'react';
 import type { Exercises } from '@/services/exercises/exercise-service';
 import Select from '@/components/select/select';
-import Button from '@/components/button/button';
+import { Button } from '@tbergq/components';
 import { FaPlus } from 'react-icons/fa';
 import Box from '@/components/box/box';
 import { useForm, FormProvider, Form } from 'react-hook-form';

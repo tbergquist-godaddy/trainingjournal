@@ -3,7 +3,7 @@ import Section from '../../../components/layout/section';
 import Typography from '../../../components/typography/typography';
 import EditExercise from './components/edit-exercise';
 import Box from '../../../components/box/box';
-import Button from '../../../components/button/button';
+import { Button } from '@tbergq/components';
 import deleteExercise from './actions/delete-exercise-action';
 
 type Props = {

@@ -1,7 +1,7 @@
 'use client';
 
 import Box from '@/components/box/box';
-import Button from '@/components/button/button';
+import { Button } from '@tbergq/components';
 import { reorderPlannedExercise } from '../actions/planned-exercise-actions';
 import { useTransition } from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';

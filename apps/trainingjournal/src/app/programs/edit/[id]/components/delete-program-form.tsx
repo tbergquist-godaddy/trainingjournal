@@ -1,7 +1,7 @@
 'use client';
 
 import { useTransition } from 'react';
-import Button from '../../../../components/button/button';
+import { Button } from '@tbergq/components';
 import deleteProgramAction from '../../../actions/delete-program-action';
 
 type Props = {

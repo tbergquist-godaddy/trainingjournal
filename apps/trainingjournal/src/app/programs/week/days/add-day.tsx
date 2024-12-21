@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/button/button';
+import { Button } from '@tbergq/components';
 import { createDayAction } from './actions/day';
 import { useActionState } from 'react';
 

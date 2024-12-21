@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/button/button';
+import { Button } from '@tbergq/components';
 import { FaTrash } from 'react-icons/fa';
 import { deletePlannedExercise } from '../actions/planned-exercise-actions';
 import { useTransition } from 'react';

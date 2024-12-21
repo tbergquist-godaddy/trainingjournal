@@ -4,7 +4,7 @@ import ProtectedPage from '../auth/protected-page';
 import Typography from '../components/typography/typography';
 
 import ExerciseList from './components/exercise-list';
-import Button from '../components/button/button';
+import { Button } from '@tbergq/components';
 import Box from '../components/box/box';
 
 export default function ExercisePage() {

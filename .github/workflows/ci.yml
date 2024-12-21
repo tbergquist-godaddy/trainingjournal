@@ -14,6 +14,11 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_API_DOMAIN: 'http://localhost:3001'
+      NEXT_PUBLIC_WEBSITE_DOMAIN: 'http://localhost:3001'
+      SUPERTOKENS_CONNECTION_URL: 'http://localhost:3001'
+      SUPERTOKENS_API_KEY: 'http://localhost:3001'
     steps:
       - uses: actions/checkout@v4
         with:

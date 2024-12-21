@@ -15,10 +15,6 @@
   }
 }
 
-.brand {
-  font-size: var(--font-size-3);
-}
-
 .flex {
   display: flex;
   justify-content: space-between;

@@ -1,8 +1,8 @@
-import { PropsWithChildren, ReactHTML } from 'react';
+import { PropsWithChildren, HTMLElementType } from 'react';
 import styles from './typography.module.css';
 
 type Props = {
-  as?: keyof ReactHTML;
+  as?: HTMLElementType;
 };
 
 export default function Typography({ children, as = 'p' }: PropsWithChildren<Props>) {

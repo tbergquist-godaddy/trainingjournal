@@ -60,7 +60,9 @@ export default function Accordion({ children }: Props) {
     <AccordionProvider>
       <div className={styles.accordion}>
         {Children.map(children, (child, i) =>
-          isValidElement(child) ? <child.type {...child.props} index={i} /> : null,
+          isValidElement(child) ? (
+            <child.type {...(typeof child.props === 'object' ? child.props : null)} index={i} />
+          ) : null,
         )}
       </div>
     </AccordionProvider>

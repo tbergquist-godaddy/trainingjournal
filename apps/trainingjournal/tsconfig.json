@@ -12,7 +12,8 @@
     "isolatedModules": true,
     "incremental": true,
     "paths": {
-      "@/*": ["apps/trainingjournal/src/app/*"]
+      "@/*": ["apps/trainingjournal/src/app/*"],
+      "@tbergq/components": ["libs/components/src/index"]
     },
     "plugins": [
       {

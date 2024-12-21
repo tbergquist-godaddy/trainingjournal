@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './navbar.module.css';
-import Container from '../container/container';
+import { Container } from '@tbergq/components';
 import Logout from './logout';
 
 export default function Navbar() {

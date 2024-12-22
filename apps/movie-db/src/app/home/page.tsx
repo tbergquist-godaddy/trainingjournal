@@ -1,15 +1,25 @@
-import { fetchLists } from '@/services/account';
+import { fetchListDetails, fetchLists } from '@/services/account';
 import { Spinner } from '@tbergq/components';
 import { Suspense } from 'react';
 import Lists from './components/lists';
-import { SWRConfig } from 'swr';
+import { SWRConfig, unstable_serialize } from 'swr';
 
-export default async function Home() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export async function generateMetadata(props: { searchParams: SearchParams }) {
+  const searchParams = await props.searchParams;
+}
+
+export default async function Home({ searchParams }: { searchParams: SearchParams }) {
+  const params = await searchParams;
+  const listId = params.listId ?? '';
+
   return (
     <SWRConfig
       value={{
         fallback: {
           lists: fetchLists(),
+          [unstable_serialize(['list', listId])]: fetchListDetails(Number(listId)),
         },
         revalidateOnMount: false,
         revalidateOnFocus: false,

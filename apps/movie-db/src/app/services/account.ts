@@ -39,3 +39,31 @@ export async function fetchLists() {
     return null;
   }
 }
+
+const listDetailSchema = zod.object({
+  description: zod.string(),
+  items: zod.array(
+    zod
+      .object({
+        id: zod.number(),
+        name: zod.string().optional(), // TODO: enum maybe, if there is a pattern
+        title: zod.string().optional(),
+        backdrop_path: zod.string(),
+      })
+      .transform(({ backdrop_path, ...rest }) => ({
+        backdropPath: backdrop_path,
+        ...rest,
+      })),
+  ),
+});
+
+export async function fetchListDetails(listId: number) {
+  try {
+    const response = await fetch(`/3/list/${listId}`);
+    const json = await response.json();
+    return listDetailSchema.parseAsync(json);
+  } catch (error) {
+    console.error('error fetching list details', error);
+    return null;
+  }
+}

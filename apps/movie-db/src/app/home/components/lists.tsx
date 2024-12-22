@@ -1,11 +1,9 @@
-import { AccountLists } from '@/services/account';
-import { use } from 'react';
+'use client';
 
-type Props = {
-  list: AccountLists;
-};
+import useSwr from 'swr';
+import { fetchLists } from '@/services/account';
 
-export default function Lists({ list }: Props) {
-  const listResponse = use(list);
+export default function Lists() {
+  const listResponse = useSwr('lists', fetchLists, { suspense: true });
   return <pre>{JSON.stringify(listResponse, null, 2)}</pre>;
 }

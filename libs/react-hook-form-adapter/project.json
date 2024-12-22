@@ -1,0 +1,13 @@
+{
+  "name": "react-hook-form-adapter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/react-hook-form-adapter/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project react-hook-form-adapter --web",
+  "targets": {
+    "build:dev": {
+      "command": "nx run react-hook-form-adapter:build"
+    }
+  }
+}

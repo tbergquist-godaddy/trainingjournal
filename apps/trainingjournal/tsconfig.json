@@ -13,7 +13,8 @@
     "incremental": true,
     "paths": {
       "@/*": ["apps/trainingjournal/src/app/*"],
-      "@tbergq/components": ["libs/components/src/index"]
+      "@tbergq/components": ["libs/components/src/index"],
+      "@tbergq/rhf-adapter": ["libs/react-hook-form-adapter/src/index"]
     },
     "plugins": [
       {

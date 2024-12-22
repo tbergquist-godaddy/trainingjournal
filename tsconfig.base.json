@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tbergq/components": ["libs/components/src/index.ts"]
+      "@tbergq/components": ["libs/components/src/index.ts"],
+      "@tbergq/rhf-adapter": ["libs/react-hook-form-adapter/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

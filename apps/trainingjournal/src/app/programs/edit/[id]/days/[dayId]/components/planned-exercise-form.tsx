@@ -2,9 +2,9 @@
 
 import { use, useActionState, useTransition } from 'react';
 import type { Exercises } from '@/services/exercises/exercise-service';
-import { Button } from '@tbergq/components';
+import { Select } from '@tbergq/rhf-adapter';
 import { FaPlus } from 'react-icons/fa';
-import { Box, Select } from '@tbergq/components';
+import { Box, Button } from '@tbergq/components';
 import { useForm, FormProvider } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';

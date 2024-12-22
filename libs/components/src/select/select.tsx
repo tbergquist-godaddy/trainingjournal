@@ -3,33 +3,27 @@
 import { HTMLProps, useId } from 'react';
 import Box from '../box/box';
 import styles from './select.module.css';
-import { useController, useFormContext } from 'react-hook-form';
 import { FaChevronDown } from 'react-icons/fa';
 
 type Props = HTMLProps<HTMLSelectElement> & {
   label: string;
   options: Array<{ value: string; text: string }>;
   name: string;
+  invalid: boolean;
+  error?: { message?: string } | undefined;
 };
 
-export default function Select({ label, name, options }: Props) {
-  const id = useId();
-  const { control } = useFormContext();
+export type SelectProps = Props;
 
-  const {
-    field: { ref, ...field },
-    fieldState: { invalid, error },
-  } = useController({
-    name,
-    control,
-  });
+export default function Select({ label, name, options, invalid, error, ...rest }: Props) {
+  const id = useId();
 
   return (
     <Box display="flex" direction="column" gap={1}>
       <label htmlFor={id}>{label}</label>
       <div className={styles.selectWrapper}>
         <select
-          {...field}
+          {...rest}
           name={name}
           id={id}
           className={styles.select}

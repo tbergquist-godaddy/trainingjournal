@@ -1,4 +1,4 @@
-import Box from '@/components/box/box';
+import { Box } from '@tbergq/components';
 import List from '@/components/list/list';
 import type { PlannedExercise } from '@/services/planned-exercise-service';
 import DeletePlannedExerciseItem from './delete-planned-exericse';

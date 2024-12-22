@@ -1,5 +1,5 @@
 import Accordion, { AccordionItem } from '@/components/accordion/accordion';
-import Box from '@/components/box/box';
+import { Box } from '@tbergq/components';
 import Section from '@/components/layout/section';
 import Typography from '@/components/typography/typography';
 import AddDay from '../days/add-day';

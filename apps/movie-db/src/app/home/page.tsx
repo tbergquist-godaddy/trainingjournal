@@ -1,13 +1,18 @@
-import { cookies } from 'next/headers';
+import { fetchLists } from '@/services/account';
+import { Spinner } from '@tbergq/components';
+import { Suspense } from 'react';
+import Lists from './components/lists';
 
 export default async function Home() {
-  const cookieStore = await cookies();
-  const sessionId = cookieStore.get('sessionId');
-  console.log('sessionId', sessionId);
+  const list = fetchLists();
   return (
     <div>
       <h1>Home</h1>
-      <div>sessionId: {sessionId?.value ?? 'no session'}</div>
+      <Suspense fallback={<Spinner />}>
+        <Lists list={list} />
+      </Suspense>
     </div>
   );
 }
+
+export const dynamic = 'force-dynamic';

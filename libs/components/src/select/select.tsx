@@ -9,7 +9,7 @@ type Props = HTMLProps<HTMLSelectElement> & {
   label: string;
   options: Array<{ value: string; text: string }>;
   name: string;
-  invalid: boolean;
+  invalid?: boolean;
   error?: { message?: string } | undefined;
 };
 

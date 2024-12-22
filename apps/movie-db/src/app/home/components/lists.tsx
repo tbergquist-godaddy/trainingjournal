@@ -2,33 +2,36 @@
 
 import useSwr from 'swr';
 import { fetchLists } from '@/services/account';
-import { Select } from '@tbergq/components';
-import { SyntheticEvent, useState, useTransition } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { Select, Spinner } from '@tbergq/components';
+import { Suspense, SyntheticEvent } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import List from './list';
 
 export default function Lists() {
-  const listResponse = useSwr('lists', fetchLists, { suspense: true });
-  const data = listResponse.data?.results ?? [];
   const searchParams = useSearchParams();
-  const [selectedList, setSelectedList] = useState<string>(searchParams.get('listId') ?? '');
+  const listId = searchParams.get('listId');
+  const listResponse = useSwr('lists', fetchLists);
+
+  const data = listResponse.data?.results ?? [];
   const router = useRouter();
   const pathname = usePathname();
-  const [, startTransition] = useTransition();
 
   const handleChange = (e: SyntheticEvent<HTMLSelectElement>) => {
     const listId = e.currentTarget.value;
-    startTransition(() => {
-      setSelectedList(listId);
-      router.push(`${pathname}?listId=${listId}`);
-    });
+    router.push(`${pathname}?listId=${listId}`);
   };
   return (
-    <Select
-      label="Select your list"
-      name="lists"
-      options={data.map(list => ({ value: list.id.toString(), text: list.name }))}
-      onChange={handleChange}
-      value={selectedList}
-    />
+    <>
+      <Select
+        label="Select your list"
+        name="lists"
+        options={data.map(list => ({ value: list.id.toString(), text: list.name }))}
+        onChange={handleChange}
+        value={listId ?? ''}
+      />
+      <Suspense fallback={<Spinner />}>
+        <List />
+      </Suspense>
+    </>
   );
 }

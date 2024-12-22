@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import ProtectedPage from '../../../auth/protected-page';
-import Box from '../../../components/box/box';
+import { Box } from '@tbergq/components';
 import Typography from '../../../components/typography/typography';
 import EditProgram from './components/edit-program';
 import DeleteProgramForm from './components/delete-program-form';

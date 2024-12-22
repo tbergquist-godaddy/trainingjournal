@@ -2,8 +2,7 @@ import { Suspense } from 'react';
 import Section from '../../../components/layout/section';
 import Typography from '../../../components/typography/typography';
 import EditExercise from './components/edit-exercise';
-import Box from '../../../components/box/box';
-import { Button } from '@tbergq/components';
+import { Button, Box } from '@tbergq/components';
 import deleteExercise from './actions/delete-exercise-action';
 
 type Props = {

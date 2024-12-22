@@ -1,4 +1,4 @@
-import Box from '@/components/box/box';
+import { Box } from '@tbergq/components';
 import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs';
 import { ReactNode } from 'react';
 

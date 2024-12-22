@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Card from '../../components/card/card';
 import Link from 'next/link';
 import { IoChevronForward } from 'react-icons/io5';
-import Box from '../../components/box/box';
+import { Box } from '@tbergq/components';
 
 type Props = {
   children: ReactNode;

@@ -1,6 +1,6 @@
 'use client';
 import { useController, useFormContext } from 'react-hook-form';
-import Box from '../box/box';
+import { Box } from '@tbergq/components';
 import styles from './text-input.module.css';
 import { HTMLProps, useId } from 'react';
 

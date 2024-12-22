@@ -1,3 +1,4 @@
+import './styles/theme.css';
 export { default as Box } from './box/box';
 export { default as Button } from './button/button';
 export { default as Container } from './container/container';

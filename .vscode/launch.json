@@ -6,6 +6,12 @@
       "type": "node-terminal",
       "request": "launch",
       "command": "( pnpm nx dev movie-db )"
+    },
+    {
+      "name": "trainingjounral: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "( pnpm nx dev trainingjournal )"
     }
   ]
 }

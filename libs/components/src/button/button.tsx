@@ -37,28 +37,30 @@ export default forwardRef(function Button(
   const Component = href != null ? 'a' : 'button';
   const isDisabled = loading || disabled;
   return (
-    <Component
-      type={href != null ? undefined : type}
-      data-size={buttonSize}
-      data-type={variant}
-      className={buttonStyles.button}
-      href={href}
-      form={form}
-      // @ts-expect-error: typing this is hard
-      ref={ref}
-      aria-disabled={isDisabled}
-      aria-label={isDisabled ? 'Loading' : undefined}
-      aria-busy={isDisabled}
-      onClick={e => {
-        if (isDisabled) {
-          e.preventDefault();
-          return;
-        }
-        // @ts-expect-error: typing this is too hard
-        onClick?.(e);
-      }}
-    >
-      <span>{loading ? <Spinner /> : children}</span>
-    </Component>
+    <div>
+      <Component
+        type={href != null ? undefined : type}
+        data-size={buttonSize}
+        data-type={variant}
+        className={buttonStyles.button}
+        href={href}
+        form={form}
+        // @ts-expect-error: typing this is hard
+        ref={ref}
+        aria-disabled={isDisabled}
+        aria-label={isDisabled ? 'Loading' : undefined}
+        aria-busy={isDisabled}
+        onClick={e => {
+          if (isDisabled) {
+            e.preventDefault();
+            return;
+          }
+          // @ts-expect-error: typing this is too hard
+          onClick?.(e);
+        }}
+      >
+        <span>{loading ? <Spinner /> : children}</span>
+      </Component>
+    </div>
   );
 });

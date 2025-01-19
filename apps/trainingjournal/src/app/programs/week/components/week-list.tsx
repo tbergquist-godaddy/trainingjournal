@@ -5,6 +5,7 @@ import Typography from '@/components/typography/typography';
 import AddDay from '../days/add-day';
 import type { GetWeeksType } from '../week-service';
 import DayList from '../days/actions/components/day-list';
+import CloneWeek from './clone-week';
 
 type Props = {
   weeks: GetWeeksType;
@@ -26,7 +27,10 @@ export default async function WeekList({ weeks }: Props) {
               return (
                 <AccordionItem title={week.name} key={week.id}>
                   <>
-                    <AddDay count={week.days.length} weekId={week.id} />
+                    <Box display="flex" gap={2}>
+                      <AddDay count={week.days.length} weekId={week.id} />
+                      <CloneWeek weekId={week.id} />
+                    </Box>
                     <Section>
                       <DayList days={week.days} />
                     </Section>

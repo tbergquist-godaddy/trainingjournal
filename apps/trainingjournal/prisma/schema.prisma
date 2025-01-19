@@ -62,7 +62,7 @@ model Workout {
   userId       String
   date         DateTime
   JournalEntry JournalEntry[]
-  dayId        String
+  dayId        String?
   Day          Day?           @relation(fields: [dayId], references: [id])
 }
 

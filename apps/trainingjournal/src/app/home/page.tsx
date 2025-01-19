@@ -12,6 +12,7 @@ export default function HomePage() {
         <Grid layout="fluid" min={'200px'} gap={8}>
           <CardLink href="/exercises">My Exercises</CardLink>
           <CardLink href="/programs">My Programs</CardLink>
+          <CardLink href="/workout">Workout</CardLink>
         </Grid>
       </Section>
     </ProtectedPage>

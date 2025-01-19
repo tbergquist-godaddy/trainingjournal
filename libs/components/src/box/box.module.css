@@ -2,6 +2,9 @@
   &[data-display='flex'] {
     display: flex;
   }
+  &[data-display='inline-block'] {
+    display: inline-block;
+  }
   &[data-justify-content='space-between'] {
     justify-content: space-between;
   }

@@ -28,6 +28,7 @@ export async function getWorkoutById(id: string) {
       userId,
     },
     include: {
+      JournalEntry: true,
       Day: {
         include: {
           PlannedExercise: {

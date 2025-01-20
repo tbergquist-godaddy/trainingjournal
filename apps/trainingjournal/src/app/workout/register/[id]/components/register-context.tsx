@@ -2,6 +2,7 @@
 
 import { createContext, ReactNode, use } from 'react';
 import type { Workout } from '../../../workout-service';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {
   workout: Awaited<Workout>;
@@ -25,4 +26,11 @@ export function useRegisterContext() {
     throw new Error('RegisterContext not found');
   }
   return context;
+}
+
+export function useSelectedExercise() {
+  const params = useSearchParams();
+  const exerciseId = params.get('exerciseId');
+  const { workout } = useRegisterContext();
+  return workout?.Day?.PlannedExercise?.find(exercise => exercise.id === exerciseId);
 }

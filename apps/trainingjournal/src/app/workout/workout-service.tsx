@@ -14,3 +14,29 @@ export async function createWorkout(dayId?: string | undefined) {
     },
   });
 }
+
+export type Workout = ReturnType<typeof getWorkoutById>;
+
+export async function getWorkoutById(id: string) {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    throw new Error('Unauthorized');
+  }
+  return prisma.workout.findFirst({
+    where: {
+      id,
+      userId,
+    },
+    include: {
+      Day: {
+        include: {
+          PlannedExercise: {
+            include: {
+              exercise: true,
+            },
+          },
+        },
+      },
+    },
+  });
+}

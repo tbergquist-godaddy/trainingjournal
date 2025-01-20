@@ -42,7 +42,7 @@ model Day {
   weekId          String
   Week            Week              @relation(fields: [weekId], references: [id], onDelete: Cascade)
   PlannedExercise PlannedExercise[]
-  Workout         Workout[]
+  Workout         Workout?
 }
 
 model PlannedExercise {
@@ -62,7 +62,7 @@ model Workout {
   userId       String
   date         DateTime
   JournalEntry JournalEntry[]
-  dayId        String?
+  dayId        String?        @unique
   Day          Day?           @relation(fields: [dayId], references: [id])
 }
 

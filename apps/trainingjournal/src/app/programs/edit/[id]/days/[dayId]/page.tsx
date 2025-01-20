@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 import PlannedExerciseList from './components/planned-exercise-list';
 import PlannedExerciseForm, { PlannedExerciseLoader } from './components/planned-exercise-form';
 import { getExercises } from '@/services/exercises/exercise-service';
+import WorkoutForm from '@/workout/register/components/workout-form';
 
 type Props = {
   params: Promise<{ id: string; dayId: string }>;
@@ -32,12 +33,17 @@ export default async function EditDay({ params }: Props) {
         </Box>
       </Section>
       <Section>
-        <Box display="flex">
+        <Box display="flex" gap={4}>
           <Link href={`/programs/edit/${id}`} legacyBehavior={true}>
             <Button variant="secondary" href={`/programs/edit/${id}`}>
               Back
             </Button>
           </Link>
+          {day?.Workout == null && (
+            <WorkoutForm actionText="Start registering workout" actionVariant="tertiary">
+              <input type="hidden" name="dayId" value={dayId} />
+            </WorkoutForm>
+          )}
         </Box>
       </Section>
     </ProtectedPage>

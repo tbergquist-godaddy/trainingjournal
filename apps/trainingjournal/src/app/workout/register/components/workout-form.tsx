@@ -1,30 +1,35 @@
 'use client';
 
-import { useActionState } from 'react';
+import { ReactNode, useActionState } from 'react';
 import { createWorkoutAction } from '../../action/workout-actions';
-import TextInput from '@/components/text-input/text-input';
-import { FormProvider, useForm } from 'react-hook-form';
-import { Box, Button } from '@tbergq/components';
+import { Box, Button, ButtonVariant } from '@tbergq/components';
+import WithFormLoadingState from '@/components/with-form-loading-state';
 
-export default function WorkoutForm() {
+type Props = {
+  children?: ReactNode;
+  actionText?: string;
+  actionVariant?: ButtonVariant;
+};
+
+export default function WorkoutForm({
+  children,
+  actionText = 'Create Workout',
+  actionVariant = 'primary',
+}: Props) {
   const [, formAction] = useActionState(createWorkoutAction, null);
-  const methods = useForm({
-    defaultValues: {
-      dayId: 'Freestyle',
-    },
-    mode: 'all',
-  });
+
   return (
-    <FormProvider {...methods}>
-      <form action={formAction}>
-        <Box display="flex" direction="column" gap={4}>
-          <Box display="flex" gap={1} alignItems="end">
-            <TextInput label="Day" name="dayId" readOnly={true} />
-            <Button variant="tertiary">Select day</Button>
-          </Box>
-          <Button type="submit">Create workout</Button>
-        </Box>
-      </form>
-    </FormProvider>
+    <form action={formAction}>
+      <Box display="flex" direction="column" gap={4}>
+        {children}
+        <WithFormLoadingState>
+          {pending => (
+            <Button loading={pending} type="submit" variant={actionVariant}>
+              {actionText}
+            </Button>
+          )}
+        </WithFormLoadingState>
+      </Box>
+    </form>
   );
 }

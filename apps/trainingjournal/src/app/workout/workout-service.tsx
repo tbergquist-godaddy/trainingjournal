@@ -35,6 +35,9 @@ export async function getWorkoutById(id: string) {
             include: {
               exercise: true,
             },
+            orderBy: {
+              order: 'asc',
+            },
           },
         },
       },

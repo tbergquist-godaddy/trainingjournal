@@ -12,6 +12,10 @@
   &[aria-invalid='true'] {
     border-color: var(--color-danger);
   }
+  &[readonly] {
+    cursor: not-allowed;
+    background-color: var(--color-gray-100);
+  }
 }
 
 .error {

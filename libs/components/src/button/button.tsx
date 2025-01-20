@@ -14,8 +14,10 @@ type AnchorProps = HTMLProps<HTMLAnchorElement> & {
   type: undefined;
 };
 
+export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'tertiary';
+
 type Props = (ButtonProps | AnchorProps) & {
-  variant?: 'primary' | 'secondary' | 'danger' | 'tertiary';
+  variant?: ButtonVariant;
   loading?: boolean;
   buttonSize?: 'small' | 'medium';
 };

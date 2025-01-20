@@ -54,5 +54,8 @@ export async function getDayById(dayId: string) {
         },
       },
     },
+    include: {
+      Workout: true,
+    },
   });
 }

@@ -32,7 +32,9 @@ export default function CurrentExercise({ workoutId, latestRegister }: Props) {
       {registeredToday > 0 && (
         <span>
           Registered today:{' '}
-          {workout?.JournalEntry.map(entry => [`${entry.reps}x${entry.weight}`]).join(', ')}
+          {workout?.JournalEntry.filter(entry => entry.exerciseId === exercise?.exerciseId)
+            .map(entry => [`${entry.reps}x${entry.weight}`])
+            .join(', ')}
         </span>
       )}
       <RegisterForm workoutId={workoutId} />

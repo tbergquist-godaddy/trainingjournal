@@ -6,15 +6,11 @@ import { Box, Button } from '@tbergq/components';
 import { FaPen } from 'react-icons/fa';
 import { useSearchParams } from 'next/navigation';
 import styles from './exercise-list.module.css';
+import Link from 'next/link';
 
 export default function ExerciseList() {
   const { workout } = useRegisterContext();
   const params = useSearchParams();
-  const handleClick = (id: string) => {
-    const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set('exerciseId', id);
-    window.history.pushState(null, '', `?${searchParams.toString()}`);
-  };
   const exerciseId = params.get('exerciseId');
   return (
     <List>
@@ -27,9 +23,15 @@ export default function ExerciseList() {
             <div>
               {exercise.name}: {sets}&nbsp;x&nbsp;{reps}
             </div>
-            <Button onClick={() => handleClick(id)} buttonSize="small">
-              <FaPen />
-            </Button>
+            <Link
+              legacyBehavior={true}
+              passHref={true}
+              href={`/workout/register/${workout.id}?exerciseId=${id}`}
+            >
+              <Button href={`/workout/register/${workout.id}?exerciseId=${id}`} buttonSize="small">
+                <FaPen />
+              </Button>
+            </Link>
           </Box>
         </List.Item>
       ))}

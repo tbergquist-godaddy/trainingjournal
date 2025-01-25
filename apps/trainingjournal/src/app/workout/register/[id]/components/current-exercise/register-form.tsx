@@ -1,11 +1,11 @@
 'use client';
 
 import { useTransition } from 'react';
-import { createJournalEntryAction } from '../../../action/journal-entry-actions';
+import { createJournalEntryAction } from '../../../../action/journal-entry-actions';
 import { FormProvider, useForm } from 'react-hook-form';
 import TextInput from '@/components/text-input/text-input';
-import { useSelectedExercise } from './register-context';
-import { Box, Button, TextInput as Input } from '@tbergq/components';
+import { useSelectedExercise } from '../register-context';
+import { Box, Button } from '@tbergq/components';
 import * as z from 'zod';
 import WithFormLoadingState from '@/components/with-form-loading-state';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -23,9 +23,6 @@ export default function RegisterForm({ workoutId }: Props) {
   const [, startTransition] = useTransition();
   const exercise = useSelectedExercise();
   const methods = useForm({
-    values: {
-      exercise: exercise?.exercise.name ?? '',
-    },
     defaultValues: {
       reps: '',
       weight: '',
@@ -58,7 +55,7 @@ export default function RegisterForm({ workoutId }: Props) {
         <Box display="flex" direction="column" gap={4}>
           <input type="hidden" name="workoutId" value={workoutId} />
           <input name="exerciseId" value={exercise.exercise.id} type="hidden" />
-          <Input name="exercise" value={exercise.exercise.name} label="Exercise" readOnly={true} />
+
           <Box display="flex" gap={4} flexGrow={1} flexWrap="wrap">
             <TextInput name="reps" label="Reps" />
             <TextInput name="weight" label="Weight" />

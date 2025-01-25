@@ -4,16 +4,22 @@ import Typography from '@/components/typography/typography';
 import { getWorkoutById } from '@/workout/workout-service';
 import ExerciseList from './components/exercise-list';
 import { RegisterProvider } from './components/register-context';
-import RegisterForm from './components/register-form';
+import CurrentExercise from './components/current-exercise/current-exercise';
+import { getLatestJournalEntries } from '@/workout/journal-entry-service';
 
 type Props = {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ exerciseId?: string }>;
 };
 
-export default async function RegisterWorkoutPage({ params }: Props) {
-  const { id } = await params;
+export default async function RegisterWorkoutPage({ params, searchParams }: Props) {
+  const [{ id }, sp] = await Promise.all([params, searchParams]);
   const workout = await getWorkoutById(id);
 
+  const exerciseId = workout?.Day?.PlannedExercise?.find(
+    exercise => exercise.id === sp.exerciseId,
+  )?.exerciseId;
+  const latestRegister = exerciseId == null ? null : getLatestJournalEntries(exerciseId);
   if (workout?.Day == null) {
     return <ProtectedPage>Freestyle not yet supported</ProtectedPage>;
   }
@@ -22,14 +28,11 @@ export default async function RegisterWorkoutPage({ params }: Props) {
       <RegisterProvider workout={workout}>
         <>
           <Typography as="h1">Register workout {workout.Day.name}</Typography>
-          {workout.JournalEntry.length > 0 && (
-            <Typography>Entries today: {workout.JournalEntry.length}</Typography>
-          )}
           <Section>
             <ExerciseList />
           </Section>
           <Section>
-            <RegisterForm workoutId={id} />
+            <CurrentExercise latestRegister={latestRegister} workoutId={id} />
           </Section>
         </>
       </RegisterProvider>

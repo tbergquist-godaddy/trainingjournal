@@ -3,6 +3,7 @@ import List from '@/components/list/list';
 import Typography from '@/components/typography/typography';
 import { GetWorkouts } from '@/workout/workout-service';
 import { Box, Button } from '@tbergq/components';
+import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { use } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -34,13 +35,17 @@ export default function WorkoutList({ workoutPromise }: Props) {
       <List>
         {workouts.map(workout => (
           <List.Item key={workout.id}>
-            <Box display="flex" gap={2}>
-              <div>
-                <strong>{workout.Day?.Week.Program.name}</strong>
-                <Typography type="subtle">{workout.Day?.name}</Typography>
-              </div>
-              {new Intl.DateTimeFormat('en-US').format(new Date(workout.date))}
-            </Box>
+            <Link href={`/workout/${workout.id}`}>
+              <Box display="flex" gap={2}>
+                <div>
+                  <strong>{workout.Day?.Week.Program.name}</strong>
+                  <Typography type="subtle">
+                    {workout.Day?.Week.name}: {workout.Day?.name}
+                  </Typography>
+                </div>
+                {new Intl.DateTimeFormat('en-US').format(new Date(workout.date))}
+              </Box>
+            </Link>
           </List.Item>
         ))}
       </List>

@@ -17,7 +17,14 @@ export async function createWorkout(dayId?: string | undefined) {
 
 export type Workout = ReturnType<typeof getWorkoutById>;
 
-export async function getWorkoutById(id: string) {
+type GetOptions = {
+  includeEntryExercise?: boolean;
+};
+
+export async function getWorkoutById(
+  id: string,
+  { includeEntryExercise = false }: GetOptions = {},
+) {
   const userId = (await getSSRUserId()) ?? '';
 
   return prisma.workout.findFirst({
@@ -26,7 +33,11 @@ export async function getWorkoutById(id: string) {
       userId,
     },
     include: {
-      JournalEntry: true,
+      JournalEntry: {
+        include: {
+          exercise: includeEntryExercise,
+        },
+      },
       Day: {
         include: {
           PlannedExercise: {
@@ -70,6 +81,7 @@ export async function getWorkouts({ pageSize = 10, page = 1 }: Options = {}) {
             name: true,
             Week: {
               select: {
+                name: true,
                 Program: {
                   select: { name: true },
                 },

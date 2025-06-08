@@ -8,7 +8,7 @@ type CreateProgram = {
   name: string;
 };
 
-type EditProgram = Omit<Program, 'userId'>;
+type EditProgram = Omit<Program, 'userId' | 'createdAt'>;
 
 async function getUserId() {
   const userId = await getSSRUserId();
@@ -26,7 +26,10 @@ export async function createProgram({ name }: CreateProgram) {
 
 export async function getPrograms() {
   const userId = await getUserId();
-  return prisma.program.findMany({ where: { userId } });
+  return prisma.program.findMany({
+    where: { userId },
+    orderBy: { createdAt: 'desc' },
+  });
 }
 
 export async function hasAccessToProgram(programId: string) {

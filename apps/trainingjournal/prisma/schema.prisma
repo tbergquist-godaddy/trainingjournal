@@ -22,10 +22,13 @@ model Exercise {
 }
 
 model Program {
-  id     String @id @default(cuid())
-  name   String
-  userId String
-  weeks  Week[]
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  createdAt DateTime @default(now())
+  weeks     Week[]
+
+  @@index([userId, createdAt])
 }
 
 model Week {

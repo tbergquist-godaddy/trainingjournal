@@ -19,6 +19,8 @@ model Exercise {
   userId          String
   PlannedExercise PlannedExercise[]
   JournalEntry    JournalEntry[]
+  
+  @@index([userId])
 }
 
 model Program {
@@ -37,6 +39,8 @@ model Week {
   Program   Program @relation(fields: [programId], references: [id], onDelete: Cascade)
   programId String
   days      Day[]
+  
+  @@index([programId])
 }
 
 model Day {
@@ -46,6 +50,8 @@ model Day {
   Week            Week              @relation(fields: [weekId], references: [id], onDelete: Cascade)
   PlannedExercise PlannedExercise[]
   Workout         Workout?
+  
+  @@index([weekId])
 }
 
 model PlannedExercise {
@@ -58,6 +64,9 @@ model PlannedExercise {
   dayId       String
   Day         Day      @relation(fields: [dayId], references: [id], onDelete: Cascade)
   order       Int
+  
+  @@index([dayId])
+  @@index([exerciseId])
 }
 
 model Workout {
@@ -67,6 +76,9 @@ model Workout {
   JournalEntry JournalEntry[]
   dayId        String?        @unique
   Day          Day?           @relation(fields: [dayId], references: [id])
+  
+  @@index([userId])
+  @@index([userId, date])
 }
 
 model JournalEntry {
@@ -77,4 +89,7 @@ model JournalEntry {
   exerciseId String
   reps       String
   weight     String
+  
+  @@index([workoutId])
+  @@index([exerciseId])
 }

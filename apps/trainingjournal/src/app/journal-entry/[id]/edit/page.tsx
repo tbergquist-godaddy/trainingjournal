@@ -6,11 +6,11 @@ import { updateJournalEntryAction } from './actions/update-journal-entry';
 import Section from '@/components/layout/section';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function EditJournalEntryPage({ params }: Props) {
-  const { id } = params;
+  const { id } = await params;
   const journalEntry = await getJournalEntryById(id);
 
   return (

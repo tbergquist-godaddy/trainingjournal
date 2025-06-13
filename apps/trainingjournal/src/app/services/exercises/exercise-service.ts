@@ -13,6 +13,9 @@ export const getExercises = async () => {
     where: {
       userId,
     },
+    orderBy: {
+      name: 'asc',
+    },
   });
 };
 

@@ -35,6 +35,30 @@ export async function updateJournalEntry(journalEntryData: Partial<JournalEntry>
   });
 }
 
+export async function getJournalEntryById(id: string) {
+  const userId = (await getSSRUserId()) ?? undefined;
+
+  // Get the journal entry and ensure it belongs to the current user
+  const journalEntry = await prisma.journalEntry.findFirst({
+    where: {
+      id,
+      workout: {
+        userId,
+      },
+    },
+    include: {
+      exercise: true,
+      workout: true,
+    },
+  });
+
+  if (!journalEntry) {
+    return null;
+  }
+
+  return journalEntry;
+}
+
 export type GetLatestJournalEntries = ReturnType<typeof getLatestJournalEntries>;
 
 export async function getLatestJournalEntries(exerciseId: string) {

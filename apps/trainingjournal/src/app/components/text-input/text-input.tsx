@@ -1,7 +1,7 @@
 'use client';
 import { useController, useFormContext } from 'react-hook-form';
 import { TextInput } from '@tbergq/components';
-import { HTMLProps, useId } from 'react';
+import { HTMLProps } from 'react';
 
 type Props = HTMLProps<HTMLInputElement> & {
   label: string;

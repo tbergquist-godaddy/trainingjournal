@@ -5,7 +5,6 @@ import Section from '@/components/layout/section';
 import List from '@/components/list/list';
 import { Box, Button } from '@tbergq/components';
 import Link from 'next/link';
-import { FaPencilAlt } from 'react-icons/fa';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -45,27 +44,13 @@ export default async function WorkoutPage({ params }: Props) {
       <List>
         {workout?.JournalEntry.map(entry => (
           <List.Item key={entry.id}>
-            <div>
+            <Link href={`/journal-entry/${entry.id}/edit`}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
                 <div>
                   {entry.exercise.name}: {entry.reps}&nbsp;x&nbsp;{entry.weight}
                 </div>
-                <Link
-                  href={`/journal-entry/${entry.id}/edit`}
-                  legacyBehavior={true}
-                  passHref={true}
-                >
-                  <Button
-                    href={`/journal-entry/${entry.id}/edit`}
-                    buttonSize="small"
-                    variant="secondary"
-                    aria-label={`Edit ${entry.exercise.name}`}
-                  >
-                    <FaPencilAlt size={14} />
-                  </Button>
-                </Link>
               </Box>
-            </div>
+            </Link>
           </List.Item>
         ))}
       </List>

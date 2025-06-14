@@ -45,14 +45,14 @@ importers:
         specifier: ^5.4.0
         version: 5.4.0(react@19.0.0)
       supertokens-auth-react:
-        specifier: ^0.47.1
-        version: 0.47.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supertokens-web-js@0.13.1)
+        specifier: ^0.49.1
+        version: 0.49.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supertokens-web-js@0.15.0)
       supertokens-node:
-        specifier: ^20.1.2
-        version: 20.1.2(encoding@0.1.13)
+        specifier: ^22.1.0
+        version: 22.1.0(encoding@0.1.13)
       supertokens-web-js:
-        specifier: ^0.13.1
-        version: 0.13.1
+        specifier: ^0.15.0
+        version: 0.15.0
       swr:
         specifier: 2.2.6-beta.5
         version: 2.2.6-beta.5(react@19.0.0)
@@ -1968,6 +1968,12 @@ packages:
   '@rushstack/ts-command-line@4.19.1':
     resolution: {integrity: sha512-J7H768dgcpG60d7skZ5uSSwyCZs/S2HrWP1Ds8d1qYAyaaeJmpmmLr9BVw97RjFzmQPOYnoXcKA4GkqDCkduQg==}
 
+  '@simplewebauthn/browser@13.1.0':
+    resolution: {integrity: sha512-WuHZ/PYvyPJ9nxSzgHtOEjogBhwJfC8xzYkPC+rR/+8chl/ft4ngjiK8kSU5HtRJfczupyOh33b25TjYbvwAcg==}
+
+  '@simplewebauthn/types@12.0.0':
+    resolution: {integrity: sha512-q6y8MkoV8V8jB4zzp18Uyj2I7oFp2/ONL8c3j8uT06AOWu3cIChc1au71QYHrP2b+xDapkGTiv+9lX7xkTlAsA==}
+
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
@@ -3136,12 +3142,12 @@ packages:
   cookie-signature@1.0.6:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
 
-  cookie@0.4.0:
-    resolution: {integrity: sha512-+Hp8fLp57wnUSt0tY0tHEXh4voZRDnoIrZPqlo3DPiI4y9lwg/jqx+1Om94/W6ZaPDOUbnjOt/99w66zk+l1Xg==}
-    engines: {node: '>= 0.6'}
-
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+    engines: {node: '>= 0.6'}
+
+  cookie@0.7.2:
+    resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
 
   cookies@0.9.1:
@@ -5924,9 +5930,6 @@ packages:
   prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
 
-  psl@1.8.0:
-    resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
-
   psl@1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
 
@@ -6265,6 +6268,9 @@ packages:
     resolution: {integrity: sha512-VqpjJZKadQB/PEbEwvFdO43Ax5dFBZ2UECszz8bQ7pi7wt//PWe1P6MN7eCnjsatYtBT6EuiClbjSWP2WrIoTw==}
     engines: {node: '>= 0.8.0'}
 
+  set-cookie-parser@2.7.1:
+    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
+
   set-function-length@1.2.2:
     resolution: {integrity: sha512-pgRc4hJ4/sNjWCSS9AmnS40x3bNMDTknHgL5UaMBTMyJnU90EgWh1Rz+MC9eFu4BuN/UwZjKQuY/1v3rM7HMfg==}
     engines: {node: '>= 0.4'}
@@ -6546,25 +6552,25 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  supertokens-auth-react@0.47.1:
-    resolution: {integrity: sha512-w6MSTUcx18LCSngGsJs3OlIejuSzkQm7eFMI8h3lqJ8faUWElAsHTB0j9nUZG0mGJ6KDnlpkTW6qZGI8FecKgQ==}
+  supertokens-auth-react@0.49.1:
+    resolution: {integrity: sha512-jjZHSBMW1Gg6rs8W4WY4HQ8fS75/+wBqfAiTaThkXiF+HujcCOc2ujm0y0kny5scwUziArMb0cHevPghaw1bSw==}
     engines: {node: '>=16.0.0', npm: '>=8'}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
-      supertokens-web-js: ^0.13.0
+      supertokens-web-js: ^0.15
 
   supertokens-js-override@0.0.4:
     resolution: {integrity: sha512-r0JFBjkMIdep3Lbk3JA+MpnpuOtw4RSyrlRAbrzMcxwiYco3GFWl/daimQZ5b1forOiUODpOlXbSOljP/oyurg==}
 
-  supertokens-node@20.1.2:
-    resolution: {integrity: sha512-Ypbm5h537VykYFGbVBtnDr0cea0VWhFszrN05tMZKKvc7h40lVV+uwF+1wh03RWuAFsIdb81DcoFV1cwgmz4sg==}
+  supertokens-node@22.1.0:
+    resolution: {integrity: sha512-ZdjiXfPCaZYYCNFHBin5wvHAP0gfYCzegKcroLAWfZCzFOdf4Rxso/rd8NOBN5B4qxs1lcs8nEinNFJqNazxHg==}
 
-  supertokens-web-js@0.13.1:
-    resolution: {integrity: sha512-8ZWlC+01SuyrEerF/Wjkwlikw9SiLPdDIY3CrtVtri6zoJ2enziyg5dbkFrWbxgOagziyl2yjnD0/EEmXxl5tw==}
+  supertokens-web-js@0.15.0:
+    resolution: {integrity: sha512-IJB1Z+SI5gsWwunvrLyhbpyVaetQt23QlMoD6Gy7+OcmJ8EaPO+knhZnqzQAppe4HiNhROAiGZb7gUTJgXonzg==}
 
-  supertokens-website@20.1.4:
-    resolution: {integrity: sha512-2hbB/MWJew4W8bq5q0M75tjUnniahLzXVOnu+535j3HB4wworwMJ1ZGfg25OL9q1fm4g+ITNKVjJeJgJqEDlmA==}
+  supertokens-website@20.1.6:
+    resolution: {integrity: sha512-WSehco2PsrFp4WY7h6tDutYyi2nPgJS8lahUadcL/cpBqgEuZ3pjnvN1NDASSNSTfXeO1smm3HrvvLZG5C7qHA==}
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -6657,6 +6663,13 @@ packages:
   tinyspy@2.2.1:
     resolution: {integrity: sha512-KYad6Vy5VDWV4GH3fjpseMQ/XU2BhIYP7Vzd0LG44qRWm/Yt2WCOTicFdvmgo6gWaqooMQCawTtILVQJupKu7A==}
     engines: {node: '>=14.0.0'}
+
+  tldts-core@6.1.86:
+    resolution: {integrity: sha512-Je6p7pkk+KMzMv2XXKmAE3McmolOQFdxkKw0R8EYNr7sELW46JqnNeTX8ybPiQgvg1ymCoF8LXs5fzFaZvJPTA==}
+
+  tldts@6.1.86:
+    resolution: {integrity: sha512-WMi/OQ2axVTf/ykqCQgXiIct+mSQDFdH2fkwhPwgEwvJ1kSzZRiinb0zF2Xb8u4+OqPChmyI6MEu4EezNJz+FQ==}
+    hasBin: true
 
   tmp@0.2.3:
     resolution: {integrity: sha512-nZD7m9iCPC5g0pYmcaxogYKggSfLsdxl8of3Q/oIbqCqLLIO9IAF0GWjX1z9NZRHPiXv8Wex4yDCaZsgEw0Y8w==}
@@ -9627,6 +9640,10 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
+  '@simplewebauthn/browser@13.1.0': {}
+
+  '@simplewebauthn/types@12.0.0': {}
+
   '@sinclair/typebox@0.27.8': {}
 
   '@sinonjs/commons@3.0.1':
@@ -11024,9 +11041,9 @@ snapshots:
 
   cookie-signature@1.0.6: {}
 
-  cookie@0.4.0: {}
-
   cookie@0.6.0: {}
+
+  cookie@0.7.2: {}
 
   cookies@0.9.1:
     dependencies:
@@ -14385,8 +14402,6 @@ snapshots:
   prr@1.0.1:
     optional: true
 
-  psl@1.8.0: {}
-
   psl@1.9.0: {}
 
   punycode@2.3.1: {}
@@ -14772,6 +14787,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  set-cookie-parser@2.7.1: {}
+
   set-function-length@1.2.2:
     dependencies:
       define-data-property: 1.1.4
@@ -15130,23 +15147,24 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  supertokens-auth-react@0.47.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supertokens-web-js@0.13.1):
+  supertokens-auth-react@0.49.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supertokens-web-js@0.15.0):
     dependencies:
+      '@simplewebauthn/types': 12.0.0
       intl-tel-input: 17.0.21
       prop-types: 15.8.1
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
       react-qr-code: 2.0.15(react@19.0.0)
       supertokens-js-override: 0.0.4
-      supertokens-web-js: 0.13.1
+      supertokens-web-js: 0.15.0
 
   supertokens-js-override@0.0.4: {}
 
-  supertokens-node@20.1.2(encoding@0.1.13):
+  supertokens-node@22.1.0(encoding@0.1.13):
     dependencies:
       buffer: 6.0.3
       content-type: 1.0.5
-      cookie: 0.4.0
+      cookie: 0.7.2
       cross-fetch: 3.1.8(encoding@0.1.13)
       debug: 4.3.7
       jose: 4.15.9
@@ -15155,19 +15173,21 @@ snapshots:
       pako: 2.1.0
       pkce-challenge: 3.1.0
       process: 0.11.10
-      psl: 1.8.0
+      set-cookie-parser: 2.7.1
       supertokens-js-override: 0.0.4
+      tldts: 6.1.86
       twilio: 4.23.0(debug@4.3.7)
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  supertokens-web-js@0.13.1:
+  supertokens-web-js@0.15.0:
     dependencies:
+      '@simplewebauthn/browser': 13.1.0
       supertokens-js-override: 0.0.4
-      supertokens-website: 20.1.4
+      supertokens-website: 20.1.6
 
-  supertokens-website@20.1.4:
+  supertokens-website@20.1.6:
     dependencies:
       browser-tabs-lock: 1.3.0
       supertokens-js-override: 0.0.4
@@ -15269,6 +15289,12 @@ snapshots:
   tinypool@0.8.4: {}
 
   tinyspy@2.2.1: {}
+
+  tldts-core@6.1.86: {}
+
+  tldts@6.1.86:
+    dependencies:
+      tldts-core: 6.1.86
 
   tmp@0.2.3: {}
 

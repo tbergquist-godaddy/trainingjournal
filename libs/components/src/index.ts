@@ -6,3 +6,4 @@ export { default as Navbar } from './navbar/navbar';
 export { default as Select, type SelectProps } from './select/select';
 export { default as Spinner } from './spinner/spinner';
 export { default as TextInput } from './text-input/text-input';
+export { default as FormattedDate } from './date';

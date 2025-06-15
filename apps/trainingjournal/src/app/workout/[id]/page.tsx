@@ -3,7 +3,7 @@ import Typography from '@/components/typography/typography';
 import { getWorkoutById } from '../workout-service';
 import Section from '@/components/layout/section';
 import List from '@/components/list/list';
-import { Box, Button } from '@tbergq/components';
+import { Box, Button, FormattedDate } from '@tbergq/components';
 import Link from 'next/link';
 
 type Props = {
@@ -25,7 +25,7 @@ export default async function WorkoutPage({ params }: Props) {
         >
           <Typography size={1} as="h1">
             Workout&nbsp;
-            {workout != null && new Intl.DateTimeFormat('en-US').format(new Date(workout.date))}
+            {workout != null && <FormattedDate date={workout.date} />}
           </Typography>
           <Box display="flex" gap={2}>
             <Link href="/workout" passHref={true} legacyBehavior={true}>

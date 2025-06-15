@@ -2,7 +2,7 @@
 import List from '@/components/list/list';
 import Typography from '@/components/typography/typography';
 import { GetWorkouts } from '@/workout/workout-service';
-import { Box, Button } from '@tbergq/components';
+import { Box, Button, FormattedDate } from '@tbergq/components';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { use } from 'react';
@@ -43,7 +43,7 @@ export default function WorkoutList({ workoutPromise }: Props) {
                     {workout.Day?.Week.name}: {workout.Day?.name}
                   </Typography>
                 </div>
-                {new Intl.DateTimeFormat('en-US').format(new Date(workout.date))}
+                <FormattedDate date={workout.date} />
               </Box>
             </Link>
           </List.Item>

@@ -92,4 +92,5 @@ model JournalEntry {
   
   @@index([workoutId])
   @@index([exerciseId])
+  @@index([exerciseId, workoutId])
 }

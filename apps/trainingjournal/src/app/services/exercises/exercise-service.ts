@@ -1,8 +1,6 @@
 import { getSSRUserId } from '../../auth/ssr-session';
 import { prisma } from '../../services/prisma';
-import { type Exercise } from '@prisma/client';
-
-type IExercise = Omit<Exercise, 'userId'>;
+import type { IExercise } from './types';
 
 export const getExercises = async () => {
   const userId = await getSSRUserId();
@@ -63,3 +61,93 @@ export const updateExercise = async (exercise: IExercise) => {
     data: exercise,
   });
 };
+
+type JournalEntryOptions = {
+  pageSize?: number;
+  page?: number;
+};
+
+export const getJournalEntriesForExercise = async (
+  exerciseId: string,
+  { pageSize = 10, page = 1 }: JournalEntryOptions = {}
+) => {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    return {
+      journalEntries: [],
+      currentPage: page,
+      hasNextPage: false,
+      hasPreviousPage: false,
+    };
+  }
+
+  const [count, journalEntries] = await Promise.all([
+    prisma.journalEntry.count({
+      where: {
+        exerciseId,
+        workout: {
+          userId,
+        },
+      },
+    }),
+    prisma.journalEntry.findMany({
+      where: {
+        exerciseId,
+        workout: {
+          userId,
+        },
+      },
+      include: {
+        workout: {
+          select: {
+            id: true,
+            date: true,
+            Day: {
+              select: {
+                name: true,
+                Week: {
+                  select: {
+                    name: true,
+                    Program: {
+                      select: { name: true },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        exercise: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+      orderBy: [
+        {
+          workout: {
+            date: 'desc',
+          },
+        },
+        {
+          id: 'desc',
+        },
+      ],
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+    }),
+  ]);
+
+  const pages = Math.ceil(count / pageSize);
+  return {
+    journalEntries,
+    currentPage: page,
+    hasNextPage: page < pages,
+    hasPreviousPage: page > 1,
+    totalCount: count,
+  };
+};
+
+export type GetJournalEntriesForExercise = ReturnType<typeof getJournalEntriesForExercise>;
+

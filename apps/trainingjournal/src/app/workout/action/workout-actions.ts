@@ -33,7 +33,7 @@ export async function createWorkoutAction(_: unknown, formData: FormData) {
   }
 }
 
-const workoutIdSchema = z.string();
+const workoutIdSchema = z.string().min(1, 'Workout ID is required');
 
 export async function deleteWorkoutAction(_: unknown, formData: FormData) {
   try {

@@ -39,18 +39,13 @@ export async function deleteWorkoutAction(_: unknown, formData: FormData) {
   try {
     const workoutId = await workoutIdSchema.parseAsync(formData.get('workoutId'));
     await deleteWorkout(workoutId);
-
-    return {
-      success: true,
-      message: 'Workout deleted successfully',
-    };
+    // On success, redirect to the workout list page
+    redirect('/workout');
   } catch (e) {
     console.error(e);
     return {
       success: false,
       message: 'Failed to delete workout',
     };
-  } finally {
-    redirect('/workout');
   }
 }

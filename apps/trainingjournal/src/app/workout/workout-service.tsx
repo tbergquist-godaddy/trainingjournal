@@ -100,3 +100,19 @@ export async function getWorkouts({ pageSize = 10, page = 1 }: Options = {}) {
     hasPreviousPage: page > 1,
   };
 }
+
+export async function deleteWorkout(id: string) {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    throw new Error('Unauthorized');
+  }
+
+  // Delete the workout - journal entries will be automatically deleted due to CASCADE
+  // This will only delete if both id and userId match, providing security
+  return prisma.workout.delete({
+    where: {
+      id,
+      userId,
+    },
+  });
+}

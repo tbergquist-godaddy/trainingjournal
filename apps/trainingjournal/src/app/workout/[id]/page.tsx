@@ -5,6 +5,7 @@ import Section from '@/components/layout/section';
 import List from '@/components/list/list';
 import { Box, Button, FormattedDate } from '@tbergq/components';
 import Link from 'next/link';
+import DeleteWorkoutButton from './components/delete-workout-button';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -38,6 +39,7 @@ export default async function WorkoutPage({ params }: Props) {
                 Continue register
               </Button>
             </Link>
+            <DeleteWorkoutButton workoutId={id} />
           </Box>
         </Box>
       </Section>

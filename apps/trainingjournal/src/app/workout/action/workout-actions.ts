@@ -1,6 +1,6 @@
 'use server';
 
-import { createWorkout } from '../workout-service';
+import { createWorkout, deleteWorkout } from '../workout-service';
 import * as z from 'zod';
 import { redirect } from 'next/navigation';
 
@@ -30,5 +30,27 @@ export async function createWorkoutAction(_: unknown, formData: FormData) {
     if (workoutId != null) {
       redirect(`/workout/register/${workoutId}`);
     }
+  }
+}
+
+const workoutIdSchema = z.string();
+
+export async function deleteWorkoutAction(_: unknown, formData: FormData) {
+  try {
+    const workoutId = await workoutIdSchema.parseAsync(formData.get('workoutId'));
+    await deleteWorkout(workoutId);
+
+    return {
+      success: true,
+      message: 'Workout deleted successfully',
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      success: false,
+      message: 'Failed to delete workout',
+    };
+  } finally {
+    redirect('/workout');
   }
 }

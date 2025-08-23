@@ -37,4 +37,4 @@ export default async function Home({ searchParams }: { searchParams: SearchParam
   );
 }
 
-export const dynamic = 'force-dynamic';
+

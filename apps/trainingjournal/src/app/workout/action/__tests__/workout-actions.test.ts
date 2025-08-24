@@ -40,17 +40,30 @@ describe('workout-actions', () => {
       mockDeleteWorkout.mockResolvedValue(mockWorkout);
       const formData = createFormData(workoutId);
 
-      const result = await deleteWorkoutAction(null, formData);
+      // For successful case, we expect the function to call redirect and not return
+      // Since redirect() in Next.js throws internally, we'll test by checking if redirect was called
+      let redirectCalled = false;
+      mockRedirect.mockImplementation(() => {
+        redirectCalled = true;
+        // Simulate Next.js redirect behavior by throwing
+        throw new Error('NEXT_REDIRECT');
+      });
+
+      try {
+        await deleteWorkoutAction(null, formData);
+        // If we get here without redirect being called, the test should fail
+        expect(redirectCalled).toBe(true);
+      } catch (error) {
+        // Expect the redirect error to be thrown
+        expect(error.message).toBe('NEXT_REDIRECT');
+        expect(redirectCalled).toBe(true);
+      }
 
       expect(mockDeleteWorkout).toHaveBeenCalledWith(workoutId);
-      expect(result).toEqual({
-        success: true,
-        message: 'Workout deleted successfully',
-      });
       expect(mockRedirect).toHaveBeenCalledWith('/workout');
     });
 
-    it('should handle service errors and redirect', async () => {
+    it('should handle service errors and return error response', async () => {
       const workoutId = 'test-workout-id';
       const serviceError = new Error('Unauthorized');
 
@@ -68,12 +81,12 @@ describe('workout-actions', () => {
         message: 'Failed to delete workout',
       });
       expect(consoleSpy).toHaveBeenCalledWith(serviceError);
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
 
       consoleSpy.mockRestore();
     });
 
-    it('should handle invalid workoutId and redirect', async () => {
+    it('should handle invalid workoutId and return error response', async () => {
       const formData = new FormData();
       // Don't append workoutId to simulate missing field
 
@@ -88,12 +101,12 @@ describe('workout-actions', () => {
         message: 'Failed to delete workout',
       });
       expect(consoleSpy).toHaveBeenCalled();
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
 
       consoleSpy.mockRestore();
     });
 
-    it('should handle empty workoutId and redirect', async () => {
+    it('should handle empty workoutId and return error response', async () => {
       const formData = createFormData('');
 
       // Mock console.error to avoid noise in test output
@@ -107,7 +120,7 @@ describe('workout-actions', () => {
         message: 'Failed to delete workout',
       });
       expect(consoleSpy).toHaveBeenCalled();
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
 
       consoleSpy.mockRestore();
     });
@@ -130,7 +143,7 @@ describe('workout-actions', () => {
         message: 'Failed to delete workout',
       });
       expect(consoleSpy).toHaveBeenCalledWith(prismaError);
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
 
       consoleSpy.mockRestore();
     });

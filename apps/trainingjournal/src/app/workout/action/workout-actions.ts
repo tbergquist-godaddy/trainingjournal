@@ -36,16 +36,20 @@ export async function createWorkoutAction(_: unknown, formData: FormData) {
 const workoutIdSchema = z.string().min(1, 'Workout ID is required');
 
 export async function deleteWorkoutAction(_: unknown, formData: FormData) {
+  let success = false;
   try {
     const workoutId = await workoutIdSchema.parseAsync(formData.get('workoutId'));
     await deleteWorkout(workoutId);
     // On success, redirect to the workout list page
-    redirect('/workout');
+    success = true;
   } catch (e) {
     console.error(e);
     return {
       success: false,
       message: 'Failed to delete workout',
     };
+  }
+  if (success) {
+    redirect('/workout');
   }
 }

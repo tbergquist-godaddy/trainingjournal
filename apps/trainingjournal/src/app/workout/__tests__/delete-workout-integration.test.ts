@@ -51,11 +51,24 @@ describe('Delete Workout Integration Tests', () => {
       // Setup mocks for successful flow
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.workout.delete.mockResolvedValue(mockWorkout);
+      
+      // Mock redirect to simulate Next.js redirect behavior
+      let redirectCalled = false;
+      mockRedirect.mockImplementation(() => {
+        redirectCalled = true;
+        throw new Error('NEXT_REDIRECT');
+      });
 
       const formData = createFormData(testWorkoutId);
 
-      // Execute the action
-      const result = await deleteWorkoutAction(null, formData);
+      // Execute the action and handle redirect
+      try {
+        await deleteWorkoutAction(null, formData);
+        expect(redirectCalled).toBe(true);
+      } catch (error) {
+        expect(error.message).toBe('NEXT_REDIRECT');
+        expect(redirectCalled).toBe(true);
+      }
 
       // Verify the complete flow
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
@@ -64,10 +77,6 @@ describe('Delete Workout Integration Tests', () => {
           id: testWorkoutId,
           userId: testUserId,
         },
-      });
-      expect(result).toEqual({
-        success: true,
-        message: 'Workout deleted successfully',
       });
       expect(mockRedirect).toHaveBeenCalledWith('/workout');
     });
@@ -108,7 +117,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
       expect(consoleSpy).toHaveBeenCalledWith(expect.any(Error));
 
       consoleSpy.mockRestore();
@@ -139,7 +148,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
       expect(consoleSpy).toHaveBeenCalledWith(prismaError);
 
       consoleSpy.mockRestore();
@@ -168,7 +177,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
 
       consoleSpy.mockRestore();
     });
@@ -190,7 +199,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
       expect(consoleSpy).toHaveBeenCalled();
 
       consoleSpy.mockRestore();
@@ -211,7 +220,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
       expect(consoleSpy).toHaveBeenCalled();
 
       consoleSpy.mockRestore();
@@ -242,7 +251,7 @@ describe('Delete Workout Integration Tests', () => {
         success: false,
         message: 'Failed to delete workout',
       });
-      expect(mockRedirect).toHaveBeenCalledWith('/workout');
+      expect(mockRedirect).not.toHaveBeenCalled();
       expect(consoleSpy).toHaveBeenCalledWith(dbError);
 
       consoleSpy.mockRestore();

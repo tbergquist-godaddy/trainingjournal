@@ -8,7 +8,7 @@ import { exerciseSchema } from '../schema/exercise-schema';
 import Section from '../../components/layout/section';
 import { Button, Box } from '@tbergq/components';
 import Link from 'next/link';
-import { useTransition } from 'react';
+import { ReactNode, useId, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 export type Exercise = {
@@ -20,9 +20,10 @@ type Props = {
   defaultValues: Exercise;
   action: (exercise: FormData) => Promise<State>;
   actionText: string;
+  extraActions?: ReactNode;
 };
-export default function ExerciseForm({ action, defaultValues, actionText }: Props) {
-  console.log({ defaultValues });
+
+export default function ExerciseForm({ action, defaultValues, actionText, extraActions }: Props) {
   const router = useRouter();
   const methods = useForm({
     defaultValues,
@@ -30,9 +31,11 @@ export default function ExerciseForm({ action, defaultValues, actionText }: Prop
     mode: 'all',
   });
   const [pending, startTransaction] = useTransition();
+  const formId = useId();
   return (
     <FormProvider {...methods}>
       <form
+        id={formId}
         action={async values => {
           const valid = await methods.trigger();
           if (!valid) {
@@ -50,19 +53,21 @@ export default function ExerciseForm({ action, defaultValues, actionText }: Prop
           <TextInput label="Name" name="name" />
           {defaultValues.id != null && <input type="hidden" name="id" value={defaultValues.id} />}
         </Section>
-        <Section>
-          <Box display="flex" gap={4}>
-            <Button loading={pending} type="submit">
-              {actionText}
-            </Button>
-            <Link href="/exercises" legacyBehavior={true}>
-              <Button variant="secondary" href="/exercises">
-                Cancel
-              </Button>
-            </Link>
-          </Box>
-        </Section>
       </form>
+
+      <Section>
+        <Box display="flex" gap={4}>
+          <Button form={formId} loading={pending} type="submit">
+            {actionText}
+          </Button>
+          <Link href="/exercises" legacyBehavior={true}>
+            <Button variant="secondary" href="/exercises">
+              Cancel
+            </Button>
+          </Link>
+          {extraActions}
+        </Box>
+      </Section>
     </FormProvider>
   );
 }

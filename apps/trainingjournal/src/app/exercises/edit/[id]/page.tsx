@@ -6,6 +6,7 @@ import { Button, Box } from '@tbergq/components';
 import deleteExercise from './actions/delete-exercise-action';
 import { getJournalEntriesForExercise } from '../../../services/exercises/exercise-service';
 import JournalEntriesList from './components/journal-entries-list';
+import JournalEntriesTitle from './components/journal-entries-title';
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -36,11 +37,16 @@ export default async function EditExercisePage({ params, searchParams }: Props) 
         </Suspense>
       </Section>
       <Section>
-        <Typography size={2} as="h2">
-          Journal Entries
-        </Typography>
-        <Suspense fallback={<div>Loading journal entries...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              <JournalEntriesTitle />
+              <div>Loading journal entries...</div>
+            </div>
+          }
+        >
           <JournalEntriesList
+            exerciseId={id}
             journalEntriesPromise={getJournalEntriesForExercise(id, {
               page: parseInt(page ?? '1', 10),
             })}

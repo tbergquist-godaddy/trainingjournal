@@ -151,3 +151,68 @@ export const getJournalEntriesForExercise = async (
 
 export type GetJournalEntriesForExercise = ReturnType<typeof getJournalEntriesForExercise>;
 
+type JournalEntryGraphOptions = {
+  startDate?: Date;
+  endDate?: Date;
+};
+
+export const getJournalEntriesForGraph = async (
+  exerciseId: string,
+  { startDate, endDate }: JournalEntryGraphOptions = {}
+) => {
+  const userId = await getSSRUserId();
+  if (userId == null) {
+    return {
+      exercise: null,
+      journalEntries: [],
+    };
+  }
+
+  // Default to 6 months ago if no start date provided
+  const defaultStartDate = new Date();
+  defaultStartDate.setMonth(defaultStartDate.getMonth() - 6);
+
+  const whereClause = {
+    exerciseId,
+    workout: {
+      userId,
+      date: {
+        gte: startDate || defaultStartDate,
+        ...(endDate && { lte: endDate }),
+      },
+    },
+  };
+
+  const [exercise, journalEntries] = await Promise.all([
+    prisma.exercise.findFirst({
+      where: {
+        id: exerciseId,
+        userId,
+      },
+    }),
+    prisma.journalEntry.findMany({
+      where: whereClause,
+      include: {
+        workout: {
+          select: {
+            id: true,
+            date: true,
+          },
+        },
+      },
+      orderBy: {
+        workout: {
+          date: 'asc',
+        },
+      },
+    }),
+  ]);
+
+  return {
+    exercise,
+    journalEntries,
+  };
+};
+
+export type GetJournalEntriesForGraph = Awaited<ReturnType<typeof getJournalEntriesForGraph>>;
+

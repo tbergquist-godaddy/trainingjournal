@@ -15,6 +15,19 @@ type Props = {
   flexGrow?: Property.FlexGrow;
   flexShrink?: Property.FlexShrink;
   mb?: Space;
+  minHeight?: Property.MinHeight;
+  position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
+  top?: Property.Top;
+  right?: Property.Right;
+  bottom?: Property.Bottom;
+  left?: Property.Left;
+  backgroundColor?: 'primary' | 'danger' | 'tertiary';
+  color?: 'white' | 'primary' | 'danger' | 'tertiary';
+  padding?: Space;
+  borderRadius?: 'default';
+  fontSize?: 'small' | 'medium' | 'large';
+  opacity?: 'low' | 'medium' | 'high';
+  transition?: 'opacity' | 'all';
 };
 
 export default function Box({
@@ -29,6 +42,19 @@ export default function Box({
   flexGrow,
   flexShrink,
   mb,
+  minHeight,
+  position,
+  top,
+  right,
+  bottom,
+  left,
+  backgroundColor,
+  color,
+  padding,
+  borderRadius,
+  fontSize,
+  opacity,
+  transition,
 }: Props) {
   return (
     <div
@@ -39,12 +65,25 @@ export default function Box({
       data-direction={direction}
       data-flex-wrap={flexWrap}
       data-mb={mb}
+      data-padding={padding}
+      data-background-color={backgroundColor}
+      data-color={color}
+      data-border-radius={borderRadius}
+      data-font-size={fontSize}
+      data-opacity={opacity}
+      data-transition={transition}
+      data-position={position}
       className={styles.box}
       style={{
         // @ts-expect-error: custom property
         '--box-flex-basis': flexBasis,
         '--box-flex-grow': flexGrow,
         '--box-flex-shrink': flexShrink,
+        minHeight,
+        top,
+        right,
+        bottom,
+        left,
       }}
     >
       {children}

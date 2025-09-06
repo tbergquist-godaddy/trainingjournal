@@ -8,6 +8,9 @@
   &[data-justify-content='space-between'] {
     justify-content: space-between;
   }
+  &[data-justify-content='center'] {
+    justify-content: center;
+  }
   &[data-align-items='center'] {
     align-items: center;
   }
@@ -97,5 +100,118 @@
   }
   &[data-mb='12'] {
     margin-bottom: var(--space-12);
+  }
+  &[data-padding='1'] {
+    padding: var(--space-1);
+  }
+  &[data-padding='2'] {
+    padding: var(--space-2);
+  }
+  &[data-padding='3'] {
+    padding: var(--space-3);
+  }
+  &[data-padding='4'] {
+    padding: var(--space-4);
+  }
+  &[data-padding='5'] {
+    padding: var(--space-5);
+  }
+  &[data-padding='6'] {
+    padding: var(--space-6);
+  }
+  &[data-padding='7'] {
+    padding: var(--space-7);
+  }
+  &[data-padding='8'] {
+    padding: var(--space-8);
+  }
+  &[data-padding='9'] {
+    padding: var(--space-9);
+  }
+  &[data-padding='10'] {
+    padding: var(--space-10);
+  }
+  &[data-padding='11'] {
+    padding: var(--space-11);
+  }
+  &[data-padding='12'] {
+    padding: var(--space-12);
+  }
+  
+  /* Background Colors */
+  &[data-background-color='primary'] {
+    background-color: var(--color-primary);
+  }
+  &[data-background-color='danger'] {
+    background-color: var(--color-danger);
+  }
+  &[data-background-color='tertiary'] {
+    background-color: var(--color-tertiary);
+  }
+  
+  /* Text Colors */
+  &[data-color='white'] {
+    color: white;
+  }
+  &[data-color='primary'] {
+    color: var(--color-primary);
+  }
+  &[data-color='danger'] {
+    color: var(--color-danger);
+  }
+  &[data-color='tertiary'] {
+    color: var(--color-tertiary-text);
+  }
+  
+  /* Border Radius */
+  &[data-border-radius='default'] {
+    border-radius: var(--border-radius);
+  }
+  
+  /* Font Sizes */
+  &[data-font-size='small'] {
+    font-size: var(--font-size-1);
+  }
+  &[data-font-size='medium'] {
+    font-size: var(--font-size-2);
+  }
+  &[data-font-size='large'] {
+    font-size: var(--font-size-3);
+  }
+  
+  /* Opacity */
+  &[data-opacity='low'] {
+    opacity: 0.3;
+  }
+  &[data-opacity='medium'] {
+    opacity: 0.7;
+  }
+  &[data-opacity='high'] {
+    opacity: 0.9;
+  }
+  
+  /* Transitions */
+  &[data-transition='opacity'] {
+    transition: opacity 0.2s;
+  }
+  &[data-transition='all'] {
+    transition: all 0.2s;
+  }
+  
+  /* Position */
+  &[data-position='static'] {
+    position: static;
+  }
+  &[data-position='relative'] {
+    position: relative;
+  }
+  &[data-position='absolute'] {
+    position: absolute;
+  }
+  &[data-position='fixed'] {
+    position: fixed;
+  }
+  &[data-position='sticky'] {
+    position: sticky;
   }
 }

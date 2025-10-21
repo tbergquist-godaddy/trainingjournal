@@ -63,7 +63,7 @@
     "jest-environment-jsdom": "30.0.5",
     "jest-util": "30.0.5",
     "jiti": "2.4.2",
-    "jsdom": "~22.1.0",
+    "jsdom": "~27.0.1",
     "nx": "21.4.1",
     "prettier": "^3.3.3",
     "prisma": "^5.22.0",

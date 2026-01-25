@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["apps/movie-db/src/app/*"],
-      "@tbergq/components": ["libs/components/src/index"]
+      "@/*": ["./src/app/*"],
+      "@tbergq/components": ["../../libs/components/src/index"]
     },
     "jsx": "preserve",
     "strict": true,

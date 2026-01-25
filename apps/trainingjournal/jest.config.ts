@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'trainingjournal',
   preset: '../../jest.preset.js',
   transform: {

@@ -8,11 +8,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  nx: {
-    // Set this to true if you would like to use SVGR
-    // See: https://github.com/gregberge/svgr
-    svgr: false,
-  },
+  nx: {},
 };
 
 const plugins = [
@@ -26,8 +22,6 @@ const plugins = [
       // Only print logs for uploading source maps in CI
       // Set to `true` to suppress logs
       silent: !process.env.CI,
-      // Automatically tree-shake Sentry logger statements to reduce bundle size
-      disableLogger: true,
     }),
 ];
 

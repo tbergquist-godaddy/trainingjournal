@@ -81,14 +81,14 @@ export default function ExerciseGraph({ initialData, exerciseId, onDateFilterCha
     onDateFilterChange(startDate, endDate);
   };
 
-  const formatTooltip = (value: unknown, name: string): [string, string] => {
+  const formatTooltip = (value: unknown, name: string | undefined): [string, string] => {
     if (name === 'weight') {
       return [`${value} lbs`, 'Weight'];
     }
-    return [String(value), name];
+    return [String(value), name ?? ''];
   };
 
-  const formatLabel = (label: string) => {
+  const formatLabel = (label: React.ReactNode) => {
     return `Date: ${label}`;
   };
 

@@ -8,6 +8,7 @@ const updateJournalEntrySchema = z.object({
   id: z.string().min(1, 'ID is required'),
   reps: z.string().min(1, 'Reps is required'),
   weight: z.string().min(1, 'Weight is required'),
+  exerciseId: z.string().min(1, 'Exercise is required'),
 });
 
 export async function updateJournalEntryAction(formData: FormData) {
@@ -16,6 +17,7 @@ export async function updateJournalEntryAction(formData: FormData) {
       id: formData.get('id'),
       reps: formData.get('reps'),
       weight: formData.get('weight'),
+      exerciseId: formData.get('exerciseId'),
     });
 
     const entry = await updateJournalEntry(journalEntryData);

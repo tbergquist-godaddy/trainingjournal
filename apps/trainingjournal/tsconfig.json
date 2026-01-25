@@ -11,10 +11,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["apps/trainingjournal/src/app/*"],
-      "@tbergq/components": ["libs/components/src/index"],
-      "@tbergq/rhf-adapter": ["libs/react-hook-form-adapter/src/index"]
+      "@/*": ["./src/app/*"],
+      "@tbergq/components": ["../../libs/components/src/index"],
+      "@tbergq/rhf-adapter": ["../../libs/react-hook-form-adapter/src/index"]
     },
     "plugins": [
       {

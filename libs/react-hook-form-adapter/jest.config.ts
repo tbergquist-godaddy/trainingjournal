@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   displayName: 'react-hook-form-adapter',
   preset: '../../jest.preset.js',
   transform: {

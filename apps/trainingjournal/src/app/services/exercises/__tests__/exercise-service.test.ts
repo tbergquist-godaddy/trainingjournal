@@ -9,7 +9,6 @@ import {
 import { prisma } from '../../../services/prisma';
 import { getSSRUserId } from '../../../auth/ssr-session';
 import userExerciseMap from '../__fixtures__/exercises';
-
 // Mock dependencies
 jest.mock('../../../services/prisma', () => ({
   prisma: {
@@ -26,29 +25,22 @@ jest.mock('../../../services/prisma', () => ({
     },
   },
 }));
-
 jest.mock('../../../auth/ssr-session', () => ({
   getSSRUserId: jest.fn(),
 }));
-
 const mockPrisma = prisma as jest.Mocked<typeof prisma>;
 const mockGetSSRUserId = getSSRUserId as jest.MockedFunction<typeof getSSRUserId>;
-
 const testUserId = 'a580a15e-3ef4-4123-9526-076ad4e8b7a0';
 const testExercises = userExerciseMap[testUserId];
-
 describe('exercise-service', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
-
   describe('getExercises', () => {
     it('should return exercises for authenticated user', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.findMany.mockResolvedValue(testExercises);
-
       const result = await getExercises();
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.findMany).toHaveBeenCalledWith({
         where: { userId: testUserId },
@@ -56,119 +48,88 @@ describe('exercise-service', () => {
       });
       expect(result).toEqual(testExercises);
     });
-
     it('should return empty array when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       const result = await getExercises();
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.findMany).not.toHaveBeenCalled();
       expect(result).toEqual([]);
     });
   });
-
   describe('getExercise', () => {
     const exerciseId = '1';
-
     it('should return exercise for authenticated user', async () => {
       const exercise = testExercises[0];
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.findUnique.mockResolvedValue(exercise);
-
       const result = await getExercise(exerciseId);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.findUnique).toHaveBeenCalledWith({
         where: { userId: testUserId, id: exerciseId },
       });
       expect(result).toEqual(exercise);
     });
-
     it('should return null when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       const result = await getExercise(exerciseId);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.findUnique).not.toHaveBeenCalled();
       expect(result).toBeNull();
     });
-
     it('should return null when exercise is not found', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.findUnique.mockResolvedValue(null);
-
       const result = await getExercise('nonexistent-id');
-
       expect(result).toBeNull();
     });
   });
-
   describe('deleteExercise', () => {
     const exerciseId = '1';
-
     it('should delete exercise for authenticated user', async () => {
       const deletedExercise = testExercises[0];
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.delete.mockResolvedValue(deletedExercise);
-
       const result = await deleteExercise(exerciseId);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.delete).toHaveBeenCalledWith({
         where: { id: exerciseId, userId: testUserId },
       });
       expect(result).toEqual(deletedExercise);
     });
-
     it('should throw error when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       await expect(deleteExercise(exerciseId)).rejects.toThrow('User not found');
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.delete).not.toHaveBeenCalled();
     });
   });
-
   describe('createExercise', () => {
     const newExercise = { name: 'New Exercise' };
-
     it('should create exercise for authenticated user', async () => {
       const createdExercise = { id: '6', ...newExercise };
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.create.mockResolvedValue(createdExercise);
-
       const result = await createExercise(newExercise);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.create).toHaveBeenCalledWith({
         data: { ...newExercise, userId: testUserId },
       });
       expect(result).toEqual(createdExercise);
     });
-
     it('should throw error when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       await expect(createExercise(newExercise)).rejects.toThrow('User not found');
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.create).not.toHaveBeenCalled();
     });
   });
-
   describe('updateExercise', () => {
     const exerciseToUpdate = { id: '1', name: 'Updated Exercise' };
-
     it('should update exercise for authenticated user', async () => {
       const updatedExercise = { ...exerciseToUpdate };
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.exercise.update.mockResolvedValue(updatedExercise);
-
       const result = await updateExercise(exerciseToUpdate);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.update).toHaveBeenCalledWith({
         where: { id: exerciseToUpdate.id, userId: testUserId },
@@ -176,17 +137,13 @@ describe('exercise-service', () => {
       });
       expect(result).toEqual(updatedExercise);
     });
-
     it('should throw error when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       await expect(updateExercise(exerciseToUpdate)).rejects.toThrow('User not found');
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.exercise.update).not.toHaveBeenCalled();
     });
   });
-
   describe('getJournalEntriesForExercise', () => {
     const exerciseId = '1';
     const mockJournalEntries = [
@@ -239,14 +196,11 @@ describe('exercise-service', () => {
         },
       },
     ];
-
     it('should return paginated journal entries for authenticated user with default pagination', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.journalEntry.count.mockResolvedValue(15);
       mockPrisma.journalEntry.findMany.mockResolvedValue(mockJournalEntries);
-
       const result = await getJournalEntriesForExercise(exerciseId);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.journalEntry.count).toHaveBeenCalledWith({
         where: {
@@ -307,22 +261,19 @@ describe('exercise-service', () => {
         totalCount: 15,
       });
     });
-
     it('should return paginated journal entries with custom pagination parameters', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.journalEntry.count.mockResolvedValue(25);
       mockPrisma.journalEntry.findMany.mockResolvedValue(mockJournalEntries);
-
       const result = await getJournalEntriesForExercise(exerciseId, {
         pageSize: 5,
         page: 3,
       });
-
       expect(mockPrisma.journalEntry.findMany).toHaveBeenCalledWith(
         expect.objectContaining({
           skip: 10, // (page 3 - 1) * pageSize 5
           take: 5,
-        })
+        }),
       );
       expect(result).toEqual({
         journalEntries: mockJournalEntries,
@@ -332,17 +283,14 @@ describe('exercise-service', () => {
         totalCount: 25,
       });
     });
-
     it('should handle last page correctly', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.journalEntry.count.mockResolvedValue(15);
       mockPrisma.journalEntry.findMany.mockResolvedValue([mockJournalEntries[0]]);
-
       const result = await getJournalEntriesForExercise(exerciseId, {
         pageSize: 10,
         page: 2,
       });
-
       expect(result).toEqual({
         journalEntries: [mockJournalEntries[0]],
         currentPage: 2,
@@ -351,12 +299,9 @@ describe('exercise-service', () => {
         totalCount: 15,
       });
     });
-
     it('should return empty result when user is not authenticated', async () => {
       mockGetSSRUserId.mockResolvedValue(null);
-
       const result = await getJournalEntriesForExercise(exerciseId);
-
       expect(mockGetSSRUserId).toHaveBeenCalledTimes(1);
       expect(mockPrisma.journalEntry.count).not.toHaveBeenCalled();
       expect(mockPrisma.journalEntry.findMany).not.toHaveBeenCalled();
@@ -367,14 +312,11 @@ describe('exercise-service', () => {
         hasPreviousPage: false,
       });
     });
-
     it('should handle empty results', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.journalEntry.count.mockResolvedValue(0);
       mockPrisma.journalEntry.findMany.mockResolvedValue([]);
-
       const result = await getJournalEntriesForExercise(exerciseId);
-
       expect(result).toEqual({
         journalEntries: [],
         currentPage: 1,
@@ -383,14 +325,11 @@ describe('exercise-service', () => {
         totalCount: 0,
       });
     });
-
     it('should handle single page of results', async () => {
       mockGetSSRUserId.mockResolvedValue(testUserId);
       mockPrisma.journalEntry.count.mockResolvedValue(5);
       mockPrisma.journalEntry.findMany.mockResolvedValue(mockJournalEntries);
-
       const result = await getJournalEntriesForExercise(exerciseId);
-
       expect(result).toEqual({
         journalEntries: mockJournalEntries,
         currentPage: 1,
@@ -400,4 +339,4 @@ describe('exercise-service', () => {
       });
     });
   });
-}); 
+});

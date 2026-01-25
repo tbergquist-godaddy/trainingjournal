@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   displayName: 'components',
   preset: '../../jest.preset.js',
   transform: {
